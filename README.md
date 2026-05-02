@@ -1,5 +1,9 @@
 # Agent Collaboration SOP
 
+Maintained by **鲲鹏 AI 探索局 / kunpeng-ai-lab**.
+
+Official site: [kunpeng-ai.com](https://kunpeng-ai.com)
+
 一套面向主流 AI 编程/工程 Agent 的双 Agent 协作 SOP。
 
 它不是 Codex 专用，也不是 Claude Code 专用，而是一套通用协作协议，适用于：
@@ -107,6 +111,12 @@ agent-collaboration-sop/
 
 这是一个工程协作 SOP 项目，不包含任何私有业务代码。
 
+## 维护者
+
+- 鲲鹏 AI 探索局 / kunpeng-ai-lab
+- Website: [https://kunpeng-ai.com](https://kunpeng-ai.com)
+- GitHub: [https://github.com/kunpeng-ai-lab](https://github.com/kunpeng-ai-lab)
+
 建议开源仓库名：
 
 ```text
@@ -118,4 +128,3 @@ agent-collaboration-sop
 ```text
 dual-agent-collaboration-sop
 ```
-
