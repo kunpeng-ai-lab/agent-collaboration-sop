@@ -55,22 +55,22 @@ ACS rules and project path.
 For every development or design task, the Reviewer must include:
 
 ```text
-Please follow ACS project (<local ACS path>) standards for <design/coding>.
+请遵循 ACS 项目（<ACS 本地路径>）规范进行（<设计/编码>）。
 ```
 
-Replace `<local ACS path>` with the actual local ACS clone path. Replace
-`<design/coding>` with the actual task type, such as `design`, `coding`, or
-`design/coding`. Record the resolved path in `docs/PROJECT_SOP.md`.
+Replace `<ACS 本地路径>` with the actual local ACS clone path. Replace
+`<设计/编码>` with the actual task type, such as `设计`, `编码`, or
+`设计/编码`. Record the resolved path in `docs/PROJECT_SOP.md`.
 
 ### Executor -> Reviewer
 
 For every review request, the Executor must include:
 
 ```text
-Please test/review according to ACS project (<local ACS path>) standards.
+请按照 ACS 项目（<ACS 本地路径>）规范进行（<测试/审核>）。
 ```
 
-Replace `<local ACS path>` with the actual local ACS clone path and record it in
+Replace `<ACS 本地路径>` with the actual local ACS clone path and record it in
 `docs/PROJECT_SOP.md`.
 
 ## Updating Older Agent Rules
@@ -81,8 +81,8 @@ rules, or local prompts, the Reviewer must send an explicit update instruction:
 ```text
 Please replace any older ACS wording in your memory/rules with the latest ACS
 templates:
-1. Please follow ACS project (<local ACS path>) standards for <design/coding>.
-2. Please test/review according to ACS project (<local ACS path>) standards.
+1. 请遵循 ACS 项目（<ACS 本地路径>）规范进行（<设计/编码>）。
+2. 请按照 ACS 项目（<ACS 本地路径>）规范进行（<测试/审核>）。
 Use the actual ACS local path for this machine.
 ```
 

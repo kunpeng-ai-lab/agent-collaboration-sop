@@ -146,7 +146,7 @@ Not included:
 ACS invocation:
 
 ```text
-Please test/review according to ACS project (<ACS Local Path>) standards.
+请按照 ACS 项目（<ACS 本地路径>）规范进行（<测试/审核>）。
 ```
 
 Reviewer should focus on:

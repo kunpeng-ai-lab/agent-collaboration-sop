@@ -125,5 +125,5 @@ Failure behavior and stability:
 If the next step includes development or design work, include:
 
 ```text
-Please follow ACS project (<ACS Local Path>) standards for <design/coding>.
+请遵循 ACS 项目（<ACS 本地路径>）规范进行（<设计/编码>）。
 ```

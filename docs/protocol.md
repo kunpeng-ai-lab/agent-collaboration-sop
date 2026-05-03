@@ -27,9 +27,9 @@ single review and decision-routing channel.
 Mandatory invocation:
 
 - Reviewer -> Executor development/design tasks must include:
-  "Please follow ACS project (<local ACS path>) standards for <design/coding>."
+  "请遵循 ACS 项目（<ACS 本地路径>）规范进行（<设计/编码>）。"
 - Executor -> Reviewer review requests must include:
-  "Please test/review according to ACS project (<local ACS path>) standards."
+  "请按照 ACS 项目（<ACS 本地路径>）规范进行（<测试/审核>）。"
 
 ## Phase 1: Execution
 

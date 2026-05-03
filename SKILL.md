@@ -33,18 +33,18 @@ Executor.
 Reviewer -> Executor development/design task:
 
 ```text
-Please follow ACS project (<local ACS path>) standards for <design/coding>.
+请遵循 ACS 项目（<ACS 本地路径>）规范进行（<设计/编码>）。
 ```
 
 Executor -> Reviewer review request:
 
 ```text
-Please test/review according to ACS project (<local ACS path>) standards.
+请按照 ACS 项目（<ACS 本地路径>）规范进行（<测试/审核>）。
 ```
 
-Replace `<local ACS path>` with the real local ACS clone path. Replace
-`<design/coding>` with the actual task type, such as `design`, `coding`, or
-`design/coding`.
+Replace `<ACS 本地路径>` with the real local ACS clone path. Replace
+`<设计/编码>` or `<测试/审核>` with the actual task type, such as `设计`,
+`编码`, `设计/编码`, `测试`, `审核`, or `测试/审核`.
 
 If an agent has already stored an older ACS wording in memory or local rules, it
 must replace that wording with the templates above.
