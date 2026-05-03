@@ -17,6 +17,25 @@ Review result: pass / needs changes
 
 ```
 
+## Test Strategy Review
+
+Executor test plan reviewed:
+
+- 
+
+Coverage accepted:
+
+- main paths:
+- failure paths:
+- boundary cases:
+- regression cases:
+- security/redaction/export cases:
+- integration/E2E cases:
+
+Coverage gaps:
+
+- 
+
 ## Findings
 
 ### Finding 1
@@ -47,6 +66,14 @@ Required fix:
 
 - 
 
+## Design / Plan Drift
+
+- 
+
+## Reviewer-Added Or Requested Tests
+
+- 
+
 ## Security / Redaction
 
 - 
@@ -66,4 +93,3 @@ Required fix:
 ## Next Step Recommendation
 
 - 
-

@@ -17,7 +17,65 @@ Why:
 
 - 
 
+## Development Package
+
+Plan:
+
+- 
+
+Design notes:
+
+- 
+
+Test cases:
+
+- 
+
+Test coverage matrix:
+
+| Path | Test | Evidence |
+| --- | --- | --- |
+| happy path | | |
+| failure path | | |
+| boundary case | | |
+| regression case | | |
+| security/redaction/export case | | |
+
+Constraints:
+
+- 
+
+Explicit non-scope:
+
+- 
+
+Minimal-change strategy:
+
+- 
+
+Documentation impact:
+
+- 
+
+Evidence plan:
+
+- 
+
 ## Changed Files
+
+- 
+
+## Comments And Human Debuggability
+
+Important modules/methods touched:
+
+- 
+
+Comments added or updated:
+
+- 
+
+Areas intentionally left uncommented because they are trivial:
 
 - 
 
@@ -34,6 +92,14 @@ Results:
 ```text
 
 ```
+
+Evidence ledger entry:
+
+- 
+
+Screenshots:
+
+- 
 
 ## Scope Notes
 
@@ -60,4 +126,3 @@ Reviewer should focus on:
 ## Owner Decisions Needed
 
 - none
-

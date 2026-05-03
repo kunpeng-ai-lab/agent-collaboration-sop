@@ -22,6 +22,34 @@ Both agents agree:
 
 - 
 
+## Evidence Chain
+
+Evidence ledger:
+
+- 
+
+Screenshots:
+
+- 
+
+Verification commands and results:
+
+```text
+
+```
+
+Reviewer report:
+
+- 
+
+Development package:
+
+- 
+
+Remaining risks:
+
+- 
+
 ## Risks
 
 - 
@@ -37,4 +65,3 @@ Owner, please confirm:
 1. Is this phase accepted?
 2. May the Executor Agent enter the next phase?
 3. Are there any scope changes?
-

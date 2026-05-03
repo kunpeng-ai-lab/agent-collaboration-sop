@@ -16,6 +16,8 @@ Before any work:
 
 Executor Agent:
 
+- prepares a development package before non-trivial work
+- records plan, design, test cases, constraints, minimal-change strategy, and docs impact
 - works only within approved scope
 - edits code/docs
 - runs self-tests
@@ -28,25 +30,34 @@ Executor Agent must not:
 - start next phase
 - publish externally without approval
 - hide scope changes inside implementation
+- skip required comments on important modules/methods
+- claim verification without a traceable ledger entry
 
 ## Phase 2: Review
 
 Reviewer Agent:
 
+- reviews the development package when required
 - reviews code
 - reviews architecture
 - reviews engineering structure
 - reviews product and project goal alignment
+- reviews whether important modules/methods are human-debuggable
 - runs tests or targeted verification
+- challenges the executor's test coverage and adds/request tests for gaps
 - checks evidence and redaction
+- checks screenshots and traceability ledger for important verification/review
 - checks release/upstream risk
 - writes findings
 
 Reviewer Agent must not:
 
 - treat green tests as enough
+- accept tests that only cover the happy path for risky work
+- ignore design drift because code runs
 - ignore project goal drift
 - skip evidence requirements
+- accept untraceable test, verification, deploy, PR, or customer-visible claims
 - approve vague handoffs
 
 ## Phase 3: Consensus Report
@@ -59,7 +70,7 @@ If review passes and next phase is proposed:
 
 ## Phase 4: Evidence Ledger
 
-For important work, create or update evidence ledger:
+For any testing, verification, review, deployment, upstream PR, or customer-visible work, create or update evidence ledger:
 
 - screenshots
 - PR links
@@ -70,3 +81,21 @@ For important work, create or update evidence ledger:
 - reviewer approval
 - Owner approval
 
+Rule:
+
+```text
+No ledger entry -> not accepted as verified.
+No screenshot for visual/public/remote state -> not accepted as traceable.
+```
+
+## Phase 5: Owner Evidence Chain
+
+Before Owner approval is requested, Reviewer must provide:
+
+- approved scope and non-scope
+- completed work
+- verification commands and exact results
+- evidence ledger and screenshot links
+- reviewer decision
+- remaining risks
+- exact Owner decision requested

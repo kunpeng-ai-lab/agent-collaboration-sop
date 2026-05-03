@@ -45,14 +45,46 @@ Required Verification:
 4. Scope changes require written discussion and Owner approval.
 5. Public release, deployment, upstream PR, customer report, or credential usage requires Owner approval.
 6. All important claims require evidence.
+7. Important code and module methods must include human-debuggable comments.
+8. Any test, verification, review, deployment, upstream PR, or customer-visible output must have a traceable ledger entry.
+9. Visual, public, remote, CI, deploy, PR, forum, blog, or customer-visible evidence must include screenshots when practical.
+10. Every non-trivial development unit must have plan, design notes, test cases, constraints, minimal-change strategy, documentation impact, and evidence plan.
+11. Executor must keep changes minimal and scoped. Unrelated refactors require separate approval.
+12. Reviewer must verify the evidence chain before asking Owner for approval.
+13. Reviewer must challenge test coverage. Happy-path-only tests are not enough for risky work.
+14. Reviewer must flag design, plan, architecture, or project-goal drift even when code runs and tests pass.
+
+## Development Package Requirements
+
+Before non-trivial implementation, Executor must prepare:
+
+- plan
+- design notes
+- test cases
+- constraints
+- explicit non-scope
+- minimal-change strategy
+- documentation impact
+- evidence plan
+- rollback/recovery notes when relevant
+
+Reviewer must approve the package before implementation when work is:
+
+- architecture-affecting
+- cross-module
+- high-risk
+- public/upstream/customer-visible
+- security or credential related
 
 ## Handoff Rules
 
 Executor must submit:
 
+- development package reference
 - changed files
 - summary
 - tests run
+- verification evidence and screenshots
 - risks
 - explicit review request
 
@@ -61,6 +93,28 @@ Reviewer must submit:
 - pass / needs changes
 - findings
 - verification
+- test coverage assessment
+- design/plan drift assessment
+- ledger links and screenshot/evidence references
 - risks
 - Owner decision items
 
+## Evidence Locations
+
+Evidence directory:
+
+```text
+evidence/
+```
+
+Ledger file:
+
+```text
+docs/EVIDENCE_LEDGER.md
+```
+
+Decision log:
+
+```text
+docs/DECISION_LOG.md
+```

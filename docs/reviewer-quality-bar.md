@@ -1,80 +1,149 @@
 # Reviewer Quality Bar
 
-Reviewer 的目标不是“挑毛病”，而是保证项目不会偏航。
+The Reviewer Agent is not a ceremonial tester.
 
-## Reviewer 必须覆盖的 10 个维度
+The reviewer must protect the project from:
 
-### 1. 项目目标
+- code that runs but violates the product goal
+- tests that pass but do not cover risk
+- architecture drift
+- scope creep
+- weak evidence
+- unsafe release or upstream behavior
 
-- 是否符合短期目标？
-- 是否符合长期方向？
-- 是否偏离 Owner 决策？
+## Required Review Dimensions
 
-### 2. 范围边界
+### 1. Project Goal Alignment
 
-- 是否超出当前阶段？
-- 是否偷偷加入新功能？
-- 是否需要重新让 Owner 决策？
+Reviewer must ask:
 
-### 3. 架构质量
+- Does this change support the short-term goal?
+- Does this change support the long-term direction?
+- Does this change conflict with Owner decisions?
+- Does this implementation solve the real user/project problem?
 
-- 模块边界是否清楚？
-- 是否引入不必要抽象？
-- 是否破坏已有架构？
-- 是否给后续扩展留下合理接口？
+### 2. Plan And Design Alignment
 
-### 4. 工程结构
+Reviewer must compare implementation against:
 
-- 文件位置是否合理？
-- 命名是否清楚？
-- 是否把临时脚本、正式代码、文档、证据混在一起？
+- approved plan
+- approved design
+- explicit non-scope
+- previous Owner decisions
+- project SOP
 
-### 5. 代码质量
+Any design drift must be called out, even if tests pass.
 
-- 错误处理是否明确？
-- 状态转换是否完整？
-- 能力声明是否真实？
-- 是否有隐藏副作用？
+### 3. Architecture Quality
 
-### 6. 测试质量
+Reviewer must check:
 
-- 是否覆盖主路径？
-- 是否覆盖失败路径？
-- 是否覆盖边界条件？
-- 是否有回归测试？
+- module boundaries
+- dependency direction
+- data ownership
+- state transitions
+- extension points
+- whether abstractions are necessary
+- whether the implementation blocks future planned work
 
-### 7. 安全与脱敏
+### 4. Engineering Structure
 
-- 是否可能泄露 token、cookie、secret？
-- 是否可能泄露本地路径、workspace、客户数据？
-- 是否只是标记 redacted，而没有真正脱敏？
+Reviewer must check:
 
-### 8. 证据质量
+- file placement
+- naming
+- separation of source, tests, docs, scripts, and evidence
+- whether temporary code leaked into production paths
+- whether generated files or local artifacts were accidentally included
 
-- 是否有命令和结果？
-- 是否有截图？
-- 是否有链接、commit hash、时间？
-- 证据能否支持结论？
+### 5. Code Quality
 
-### 9. 运维风险
+Reviewer must check:
 
-- 是否影响部署、端口、后台进程、计划任务、CI？
-- 是否有 rollback？
-- 是否有 destructive action？
+- error handling
+- failure behavior
+- capability claims
+- side effects
+- concurrency, retry, timeout, cancellation, and rollback behavior when relevant
+- whether important modules/methods have human-debuggable comments
 
-### 10. 对外影响
+### 6. Test Quality
 
-- 是否涉及上游 PR？
-- 是否涉及客户报告？
-- 是否涉及博客发布？
-- 是否涉及正式环境？
+Reviewer must not only ask whether tests pass.
 
-## Reviewer 输出必须明确
+Reviewer must check:
+
+- main path coverage
+- failure path coverage
+- boundary cases
+- regression cases
+- security/redaction cases
+- malformed input cases
+- integration or E2E coverage when module boundaries are involved
+- whether tests prove the approved behavior, not just the implementation
+
+Use `docs/reviewer-testing-playbook.md`.
+
+### 7. Security And Redaction
+
+Reviewer must check:
+
+- tokens, cookies, secrets, credentials
+- local paths and workspace leakage
+- customer data leakage
+- false `redacted` or `checked` metadata
+- whether export/report/publish actions are properly gated
+
+### 8. Evidence Quality
+
+Reviewer must verify:
+
+- commands and exact results
+- screenshots for visual/public/remote state
+- ledger entry
+- links, commits, PRs, issues, CI, deployment state
+- whether evidence supports the claimed conclusion
+
+### 9. Operational Risk
+
+Reviewer must check:
+
+- deployment impact
+- ports, background processes, scheduled tasks, services
+- CI/CD behavior
+- rollback path
+- destructive actions
+- environment assumptions
+
+### 10. External Impact
+
+Reviewer must check whether the work affects:
+
+- upstream PRs
+- public posts
+- blogs
+- customer reports
+- production environments
+- commercial commitments
+
+If yes, Owner approval and evidence ledger are mandatory.
+
+## Reviewer Output Standard
+
+Reviewer output must include:
 
 ```text
-通过 / 需要修改
-阻塞项 / 非阻塞项
-Owner 需要决策什么
-下一步是否可以开始
+Result: pass / needs changes
+Blocking findings:
+Non-blocking findings:
+Verification commands:
+Evidence ledger:
+Design/plan drift:
+Architecture risk:
+Test coverage gaps:
+Owner decisions needed:
+Next step recommendation:
 ```
+
+Green tests alone are never enough for a pass.
 

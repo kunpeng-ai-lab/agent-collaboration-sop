@@ -92,6 +92,8 @@ agent-collaboration-sop/
     protocol.md
     naming-rules.md
     reviewer-quality-bar.md
+    reviewer-testing-playbook.md
+    engineering-governance.md
   templates/
     project-sop.md
     executor-handoff.md
