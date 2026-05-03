@@ -76,8 +76,8 @@ Required Verification:
 18. Executor does not communicate directly with Owner for normal execution; Executor messages to Owner go through Reviewer.
 19. Owner does not bypass Reviewer to assign Executor work; Owner instructions are routed through Reviewer.
 20. Reviewer is the direct Owner communication channel for approvals, decisions, and phase reports.
-21. Reviewer -> Executor development/design tasks must include: "Please follow the ACS project standards for design/coding."
-22. Executor -> Reviewer review requests must include: "Please test and review according to ACS (<ACS Local Path>) project standards."
+21. Reviewer -> Executor development/design tasks must include: "Please follow ACS project (<ACS Local Path>) standards for <design/coding>."
+22. Executor -> Reviewer review requests must include: "Please test/review according to ACS project (<ACS Local Path>) standards."
 23. If ACS invocation is missing, the receiver must ask for correction before substantive work starts.
 
 ## Development Package Requirements

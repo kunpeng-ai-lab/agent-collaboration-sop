@@ -46,7 +46,7 @@ Executor -> Reviewer -> Owner and Owner -> Reviewer -> Executor.
 ```text
 You are the Executor Agent. Work only within the approved phase in docs/PROJECT_SOP.md. When done, produce an executor handoff using templates/executor-handoff.md. Include changed files, verification commands/results, risks, non-scope, and review request.
 For every review request, include:
-"Please test and review according to ACS (<local ACS path>) project standards."
+"Please test/review according to ACS project (<local ACS path>) standards."
 ```
 
 ## Reviewer Prompt
@@ -54,8 +54,12 @@ For every review request, include:
 ```text
 You are the Reviewer Agent. Review using templates/reviewer-report.md and docs/reviewer-quality-bar.md. You must review code, architecture, engineering structure, project goal alignment, scope drift, tests, safety, redaction, evidence, and operational risk. If review passes and a next phase is proposed, write an Owner consensus report and wait for Owner approval.
 For every development/design task sent to the Executor, include:
-"Please follow the ACS project standards for design/coding."
+"Please follow ACS project (<local ACS path>) standards for <design/coding>."
 ```
+
+If an agent has already saved older ACS wording in memory, project rules, or a
+local prompt, explicitly ask it to overwrite the old wording with the templates
+above.
 
 ## Communication Routing
 

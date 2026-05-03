@@ -1,6 +1,6 @@
 # Agent Collaboration SOP
 
-Maintained by **Kunpeng AI Exploration Bureau / kunpeng-ai-lab / 鲲鹏 AI 探索局**.
+Maintained by **Kunpeng AI Exploration Bureau / kunpeng-ai-lab**.
 
 Official site: [kunpeng-ai.com](https://kunpeng-ai.com)
 GitHub: [kunpeng-ai-lab](https://github.com/kunpeng-ai-lab)
@@ -58,19 +58,21 @@ See [docs/communication-routing.md](docs/communication-routing.md).
 Every development/design task from Reviewer to Executor must include:
 
 ```text
-Please follow the ACS project standards for design/coding.
-ACS project path: E:\workspace\agent-collaboration-sop
+Please follow ACS project (<local ACS path>) standards for <design/coding>.
 ```
 
 Every review request from Executor to Reviewer must include:
 
 ```text
-Please test and review according to ACS (E:\workspace\agent-collaboration-sop)
-project standards.
+Please test/review according to ACS project (<local ACS path>) standards.
 ```
 
-If your local ACS clone is somewhere else, replace the path and record it in the
-target project's `docs/PROJECT_SOP.md`.
+Replace `<local ACS path>` with the real local ACS clone path. Replace
+`<design/coding>` with the actual task type, such as `design`, `coding`, or
+`design/coding`.
+
+If an agent has already stored an older ACS wording in memory or local rules, it
+must replace that wording with the templates above.
 
 ## Quick Start
 
@@ -128,6 +130,7 @@ See:
 agent-collaboration-sop/
   README.md
   CONTRIBUTING.md
+  SKILL.md
   docs/
     communication-routing.md
     initialization-questionnaire.md

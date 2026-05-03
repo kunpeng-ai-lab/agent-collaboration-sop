@@ -33,19 +33,21 @@ Executor.
 Reviewer -> Executor development/design task:
 
 ```text
-Please follow the ACS project standards for design/coding.
-ACS project path: E:\workspace\agent-collaboration-sop
+Please follow ACS project (<local ACS path>) standards for <design/coding>.
 ```
 
 Executor -> Reviewer review request:
 
 ```text
-Please test and review according to ACS (E:\workspace\agent-collaboration-sop)
-project standards.
+Please test/review according to ACS project (<local ACS path>) standards.
 ```
 
-If the local ACS clone uses another path, replace the path and record it in the
-target project's `docs/PROJECT_SOP.md`.
+Replace `<local ACS path>` with the real local ACS clone path. Replace
+`<design/coding>` with the actual task type, such as `design`, `coding`, or
+`design/coding`.
+
+If an agent has already stored an older ACS wording in memory or local rules, it
+must replace that wording with the templates above.
 
 ## Workflow
 
@@ -84,4 +86,3 @@ No ledger entry means the claim is not accepted as verified.
 
 No ACS invocation means the receiver must ask for correction before substantive
 work starts.
-

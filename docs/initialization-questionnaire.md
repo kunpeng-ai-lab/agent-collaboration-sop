@@ -116,18 +116,18 @@ Ask the Owner to confirm that every task message must include the ACS invocation
 Reviewer -> Executor development/design task:
 
 ```text
-Please follow the ACS project standards for design/coding.
-ACS project path: E:\workspace\agent-collaboration-sop
+Please follow ACS project (<local ACS path>) standards for <design/coding>.
 ```
 
 Executor -> Reviewer review request:
 
 ```text
-Please test and review according to ACS (E:\workspace\agent-collaboration-sop)
-project standards.
+Please test/review according to ACS project (<local ACS path>) standards.
 ```
 
-Replace the path if the local ACS clone is elsewhere.
+Replace `<local ACS path>` with the real local ACS clone path. Replace
+`<design/coding>` with the actual task type, such as `design`, `coding`, or
+`design/coding`.
 
 ## 8. Write PROJECT_SOP
 
@@ -138,4 +138,3 @@ docs/PROJECT_SOP.md
 ```
 
 Only then may execution or review begin.
-

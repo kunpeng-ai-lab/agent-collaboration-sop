@@ -55,24 +55,36 @@ ACS rules and project path.
 For every development or design task, the Reviewer must include:
 
 ```text
-Please follow the ACS project standards for design/coding.
-ACS project path: E:\workspace\agent-collaboration-sop
+Please follow ACS project (<local ACS path>) standards for <design/coding>.
 ```
 
-If the local machine uses another path, replace the path with the actual local
-ACS clone path and record it in `docs/PROJECT_SOP.md`.
+Replace `<local ACS path>` with the actual local ACS clone path. Replace
+`<design/coding>` with the actual task type, such as `design`, `coding`, or
+`design/coding`. Record the resolved path in `docs/PROJECT_SOP.md`.
 
 ### Executor -> Reviewer
 
 For every review request, the Executor must include:
 
 ```text
-Please test and review according to ACS (E:\workspace\agent-collaboration-sop)
-project standards.
+Please test/review according to ACS project (<local ACS path>) standards.
 ```
 
-If the local machine uses another path, replace the path with the actual local
-ACS clone path and record it in `docs/PROJECT_SOP.md`.
+Replace `<local ACS path>` with the actual local ACS clone path and record it in
+`docs/PROJECT_SOP.md`.
+
+## Updating Older Agent Rules
+
+If an agent already stored an older ACS wording in long-term memory, project
+rules, or local prompts, the Reviewer must send an explicit update instruction:
+
+```text
+Please replace any older ACS wording in your memory/rules with the latest ACS
+templates:
+1. Please follow ACS project (<local ACS path>) standards for <design/coding>.
+2. Please test/review according to ACS project (<local ACS path>) standards.
+Use the actual ACS local path for this machine.
+```
 
 ## Required Project-Level Fields
 
@@ -93,4 +105,3 @@ agent must ask for correction before starting substantive work.
 
 If the Owner directly gives work to the Executor, the Executor must route it back
 through the Reviewer unless the project SOP has an explicit emergency exception.
-
