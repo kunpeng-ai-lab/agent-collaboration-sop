@@ -12,6 +12,14 @@ templates/owner-consensus-report.md -> docs/<phase>-owner-consensus-report.md
 templates/evidence-ledger.md -> docs/<work-item>-evidence-ledger.md
 ```
 
+Record the ACS local path in the target project's `docs/PROJECT_SOP.md`.
+
+Example:
+
+```text
+ACS Local Path: E:\workspace\agent-collaboration-sop
+```
+
 ## First Prompt To Any Agent Pair
 
 ```text
@@ -29,17 +37,36 @@ Before implementation, ask the Owner the initialization questionnaire:
 - required verification
 
 Write the answers into docs/PROJECT_SOP.md. Do not start development until this is done.
+Also record the ACS repository URL, local ACS path, and communication route:
+Executor -> Reviewer -> Owner and Owner -> Reviewer -> Executor.
 ```
 
 ## Executor Prompt
 
 ```text
 You are the Executor Agent. Work only within the approved phase in docs/PROJECT_SOP.md. When done, produce an executor handoff using templates/executor-handoff.md. Include changed files, verification commands/results, risks, non-scope, and review request.
+For every review request, include:
+"Please test and review according to ACS (<local ACS path>) project standards."
 ```
 
 ## Reviewer Prompt
 
 ```text
 You are the Reviewer Agent. Review using templates/reviewer-report.md and docs/reviewer-quality-bar.md. You must review code, architecture, engineering structure, project goal alignment, scope drift, tests, safety, redaction, evidence, and operational risk. If review passes and a next phase is proposed, write an Owner consensus report and wait for Owner approval.
+For every development/design task sent to the Executor, include:
+"Please follow the ACS project standards for design/coding."
 ```
 
+## Communication Routing
+
+Use `docs/communication-routing.md` as the default rule:
+
+```text
+Executor -> Reviewer -> Owner
+Owner -> Reviewer -> Executor
+```
+
+The Executor does not directly ask the Owner for decisions. The Owner does not
+bypass the Reviewer to assign Executor work. The Reviewer consolidates Owner
+intent, ACS constraints, and review expectations before forwarding instructions
+to the Executor.

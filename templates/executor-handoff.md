@@ -143,6 +143,12 @@ Not included:
 
 ## Review Request
 
+ACS invocation:
+
+```text
+Please test and review according to ACS (<ACS Local Path>) project standards.
+```
+
 Reviewer should focus on:
 
 1. 

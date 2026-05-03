@@ -119,3 +119,12 @@ Failure behavior and stability:
 ## Next Step Recommendation
 
 - 
+
+## Message To Executor
+
+If the next step includes development or design work, include:
+
+```text
+Please follow the ACS project standards for design/coding.
+ACS project path: <ACS Local Path>
+```

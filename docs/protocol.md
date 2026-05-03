@@ -11,6 +11,25 @@ Before any work:
 5. Confirm Reviewer Agent name and short name.
 6. Confirm current phase scope and non-scope.
 7. Write everything into `docs/PROJECT_SOP.md`.
+8. Confirm the local ACS path and write it into `docs/PROJECT_SOP.md`.
+9. Confirm the communication route in `docs/communication-routing.md`.
+
+Default communication route:
+
+```text
+Executor -> Reviewer -> Owner
+Owner -> Reviewer -> Executor
+```
+
+The Executor does not directly ask the Owner for decisions. The Reviewer is the
+single review and decision-routing channel.
+
+Mandatory invocation:
+
+- Reviewer -> Executor development/design tasks must include:
+  "Please follow the ACS project standards for design/coding."
+- Executor -> Reviewer review requests must include:
+  "Please test and review according to ACS (<local ACS path>) project standards."
 
 ## Phase 1: Execution
 
@@ -66,6 +85,9 @@ Reviewer Agent must not:
 - skip evidence requirements
 - accept untraceable test, verification, deploy, PR, or customer-visible claims
 - approve vague handoffs
+- accept a handoff that omits the mandatory ACS invocation
+- allow Owner-to-Executor bypass unless the project SOP records an approved
+  emergency exception
 
 ## Phase 3: Consensus Report
 

@@ -1,93 +1,135 @@
 # Agent Collaboration SOP
 
-Maintained by **鲲鹏 AI 探索局 / kunpeng-ai-lab**.
+Maintained by **Kunpeng AI Exploration Bureau / kunpeng-ai-lab / 鲲鹏 AI 探索局**.
 
 Official site: [kunpeng-ai.com](https://kunpeng-ai.com)
+GitHub: [kunpeng-ai-lab](https://github.com/kunpeng-ai-lab)
 
-一套面向主流 AI 编程/工程 Agent 的双 Agent 协作 SOP。
+Agent Collaboration SOP, abbreviated as **ACS**, is a vendor-neutral workflow for
+two-agent engineering collaboration. It works with Codex, Claude Code,
+OpenClaw, Hermes, and other coding agents that can read project files, edit code,
+run tests, and produce handoffs.
 
-它不是 Codex 专用，也不是 Claude Code 专用，而是一套通用协作协议，适用于：
+## What ACS Solves
 
-- Codex
-- Claude Code
-- OpenClaw
-- Hermes
-- 其他支持项目读写、代码修改、测试、review、handoff 的 Agent
+ACS is designed for teams that use one agent as the Executor and another as the
+Reviewer.
 
-## 解决什么问题
+It prevents common failures:
 
-当同一台机器、同一个仓库、同一个项目里有两个 Agent 协作时，最容易出现这些问题：
+- the Executor self-approves its own work
+- the Reviewer only runs tests and misses architecture or goal drift
+- Owner decisions are lost in chat history
+- scope changes slip into implementation without approval
+- tests pass but the work violates the approved design
+- public, upstream, or customer-visible claims lack screenshots or ledger proof
 
-- 两个 Agent 都在改，没人真正审核
-- 测试过了，但偏离了产品目标
-- 实现看起来对，但破坏了原架构
-- 新阶段还没获得 Owner 确认就直接开始
-- 口头说“已完成”，但没有证据、截图、台账、验证记录
-- Reviewer 只做代码风格检查，没有做工程质量和项目目标守门
+## Default Collaboration Model
 
-本项目给出一套可复制的流程：
+ACS defaults to single-responsibility collaboration.
 
-```text
-初始化问卷 -> 固化角色/简称/Owner 称呼 -> Executor 实现 -> Reviewer 全面审核
--> Reviewer 向 Owner 汇报共识 -> Owner 批准 -> 进入下一阶段
-```
-
-## 默认协作模式
-
-默认是单一职责模式：
-
-| 角色 | 职责 |
+| Role | Responsibility |
 | --- | --- |
-| Owner | 项目最终决策者，确认目标、边界、阶段进入、发布和上游提交 |
-| Executor Agent | 主责实现：设计细化、编码、文档、自测、交付 handoff |
-| Reviewer Agent | 主责审核：代码、架构、工程结构、目标偏离、测试、安全、证据、发布风险 |
+| Owner | Final decision maker for goals, scope, phase entry, release, upstream PRs, and business boundaries |
+| Executor Agent | Designs within approved scope, implements, self-tests, documents, and writes handoff |
+| Reviewer Agent | Reviews design, code, tests, architecture, goal alignment, evidence, safety, and reports consensus to Owner |
 
-交叉模式仅作为高级变体，不作为默认模式。
+Cross-review mode is an advanced variant and should be used only when the Owner
+explicitly assigns it.
 
-## 快速开始
+## Communication Routing
 
-1. 复制 `templates/project-sop.md` 到你的项目：
-
-```text
-docs/PROJECT_SOP.md
-```
-
-2. 让两个 Agent 先执行初始化问卷：
+Long-term route:
 
 ```text
-请使用 Agent Collaboration SOP。先不要开始开发，先根据 docs/initialization-questionnaire.md 向 Owner 提问，确认项目简称、Owner 称呼、Executor Agent 名称/简称、Reviewer Agent 名称/简称、当前阶段、范围和红线规则，并写入 docs/PROJECT_SOP.md。
+Executor -> Reviewer -> Owner
+Owner -> Reviewer -> Executor
 ```
 
-3. Executor 开始执行已批准范围。
+- Executor does not directly communicate with Owner during normal execution.
+- Executor messages to Owner are routed through Reviewer.
+- Owner instructions to Executor are routed through Reviewer.
+- Reviewer consolidates Owner intent, ACS constraints, and review expectations.
 
-4. Executor 完成后使用 `templates/executor-handoff.md` 交付。
+See [docs/communication-routing.md](docs/communication-routing.md).
 
-5. Reviewer 使用 `templates/reviewer-checklist.md` 全面审核。
+## Mandatory ACS Invocation
 
-6. Reviewer 使用 `templates/owner-consensus-report.md` 向 Owner 汇报，等待确认。
+Every development/design task from Reviewer to Executor must include:
 
-## Reviewer 必须审核什么
+```text
+Please follow the ACS project standards for design/coding.
+ACS project path: E:\workspace\agent-collaboration-sop
+```
 
-Reviewer 不是“跑一下测试”的角色。Reviewer 必须审核：
+Every review request from Executor to Reviewer must include:
 
-- 是否偏离项目目标
-- 是否偏离前期设计和 Owner 决策
-- 工程结构是否健康
-- 模块边界是否合理
-- 是否引入不必要复杂度
-- 是否存在安全/脱敏/凭证泄露风险
-- 测试是否覆盖关键路径和失败路径
-- 文档是否夸大验证结果
-- 是否需要截图、证据、台账
-- 是否涉及发布、部署、上游 PR、客户可见输出
+```text
+Please test and review according to ACS (E:\workspace\agent-collaboration-sop)
+project standards.
+```
 
-## 目录结构
+If your local ACS clone is somewhere else, replace the path and record it in the
+target project's `docs/PROJECT_SOP.md`.
+
+## Quick Start
+
+1. Clone ACS:
+
+```powershell
+git clone git@github.com:kunpeng-ai-lab/agent-collaboration-sop.git E:\workspace\agent-collaboration-sop
+```
+
+2. Copy templates into the target project:
+
+```text
+templates/project-sop.md -> docs/PROJECT_SOP.md
+templates/executor-handoff.md -> docs/<phase>-executor-handoff.md
+templates/reviewer-report.md -> docs/<phase>-reviewer-report.md
+templates/owner-consensus-report.md -> docs/<phase>-owner-consensus-report.md
+templates/evidence-ledger.md -> docs/<work-item>-evidence-ledger.md
+```
+
+3. Ask the Owner the initialization questions in
+   [docs/initialization-questionnaire.md](docs/initialization-questionnaire.md).
+
+4. Record project name, project short name, Owner title, Executor short name,
+   Reviewer short name, ACS local path, scope, non-scope, exit criteria, and
+   redline rules in `docs/PROJECT_SOP.md`.
+
+5. Start work only after the approved phase is clear.
+
+## Reviewer Quality Bar
+
+The Reviewer must check more than whether the code runs.
+
+Reviewer must review:
+
+- project goal alignment
+- approved design and plan alignment
+- architecture and module boundaries
+- decoupling and dependency direction
+- test coverage, including failure paths
+- security, credentials, redaction, and leakage risk
+- evidence ledger and screenshots
+- release, deployment, upstream, and customer-visible risk
+- whether important code and module methods are human-debuggable
+
+See:
+
+- [docs/reviewer-quality-bar.md](docs/reviewer-quality-bar.md)
+- [docs/reviewer-testing-playbook.md](docs/reviewer-testing-playbook.md)
+- [docs/technical-design-rules.md](docs/technical-design-rules.md)
+- [docs/engineering-governance.md](docs/engineering-governance.md)
+
+## Project Structure
 
 ```text
 agent-collaboration-sop/
   README.md
-  LICENSE
+  CONTRIBUTING.md
   docs/
+    communication-routing.md
     initialization-questionnaire.md
     protocol.md
     naming-rules.md
@@ -110,24 +152,6 @@ agent-collaboration-sop/
     single-responsibility-example.md
 ```
 
-## 开源定位
+## License
 
-这是一个工程协作 SOP 项目，不包含任何私有业务代码。
-
-## 维护者
-
-- 鲲鹏 AI 探索局 / kunpeng-ai-lab
-- Website: [https://kunpeng-ai.com](https://kunpeng-ai.com)
-- GitHub: [https://github.com/kunpeng-ai-lab](https://github.com/kunpeng-ai-lab)
-
-建议开源仓库名：
-
-```text
-agent-collaboration-sop
-```
-
-或：
-
-```text
-dual-agent-collaboration-sop
-```
+MIT.

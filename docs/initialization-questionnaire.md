@@ -1,56 +1,61 @@
 # Initialization Questionnaire
 
-在任何开发、修改、review 前，两个 Agent 必须先向 Owner 提问，并把答案固化到项目的 `docs/PROJECT_SOP.md`。
+Before development, editing, review, deployment, or upstream work, the agents
+must ask the Owner these questions and write the answers into
+`docs/PROJECT_SOP.md`.
 
-不要跳过这一步。
+Do not skip this step.
 
-## 1. 项目身份
+## 1. Project Identity
 
-请 Owner 回答：
-
-```text
-1. 这个项目的正式名称是什么？
-2. 后续沟通使用什么项目简称？例如 GA、OWSL、KAB。
-3. 当前项目是开源、闭源，还是暂时内部项目？
-4. 项目当前最重要的短期目标是什么？
-5. 项目长期目标是什么？
-```
-
-## 2. Owner 称呼
-
-请 Owner 回答：
+Ask the Owner:
 
 ```text
-1. 后续在文档和汇报里如何称呼你？
-   例如：Owner、项目 Owner、产品 Owner、负责人、你的名字。
-2. 哪些事项必须由你最终确认？
+1. What is the formal project name?
+2. What short name should we use? Examples: GA, OWSL, ACS.
+3. Is this project open source, closed source, or internal for now?
+4. What is the most important short-term goal?
+5. What is the long-term goal?
+6. What is the repository URL?
+7. What is the local project path?
+8. What is the ACS local path? Example: E:\workspace\agent-collaboration-sop
 ```
 
-默认必须 Owner 确认：
+## 2. Owner Title
 
-- 新阶段开始
-- 范围变更
-- 上线部署
-- 上游 PR
-- 对外发布
-- 客户可见报告
-- 商业边界
-- 凭证或敏感配置使用
-
-## 3. Agent 身份与简称
-
-请 Owner 回答：
+Ask the Owner:
 
 ```text
-1. 哪个 Agent 是 Executor？
-2. Executor 的显示名称是什么？
-3. Executor 的简称是什么？
-4. 哪个 Agent 是 Reviewer？
-5. Reviewer 的显示名称是什么？
-6. Reviewer 的简称是什么？
+1. How should we refer to you in docs and reports?
+   Examples: Owner, Project Owner, Product Owner, Responsible Owner.
+2. Which decisions must be confirmed by you?
 ```
 
-示例：
+Default Owner decision items:
+
+- new phase start
+- scope change
+- deployment
+- upstream PR
+- public release
+- customer-visible report
+- commercial boundary
+- credential or sensitive configuration use
+
+## 3. Agent Identity And Short Names
+
+Ask the Owner:
+
+```text
+1. Which agent is the Executor?
+2. What is the Executor display name?
+3. What is the Executor short name?
+4. Which agent is the Reviewer?
+5. What is the Reviewer display name?
+6. What is the Reviewer short name?
+```
+
+Example:
 
 ```text
 Executor Agent: Claude Code
@@ -60,38 +65,77 @@ Reviewer Agent: Codex
 Reviewer Short Name: CX
 ```
 
-## 4. 当前阶段
+## 4. Communication Route
 
-请 Owner 回答：
-
-```text
-1. 当前阶段叫什么？
-2. 这个阶段允许做什么？
-3. 这个阶段明确不允许做什么？
-4. 完成标准是什么？
-5. 哪些测试或证据必须提供？
-```
-
-## 5. Reviewer 权限
-
-请 Owner 回答：
+Ask the Owner:
 
 ```text
-1. Reviewer 是否有权阻止进入下一阶段？
-2. Reviewer 是否有权要求补测试、补文档、补截图、补证据？
-3. Reviewer 是否可以指出项目目标/架构/产品方向偏离？
-4. Reviewer 是否可以要求重新讨论范围？
+1. Are we using the default route?
+   Executor -> Reviewer -> Owner
+   Owner -> Reviewer -> Executor
+2. Are there any emergency exceptions?
+3. If an exception exists, who can approve it and how is it recorded?
 ```
 
-建议默认答案：全部可以。
+Default answer should usually be:
 
-## 6. 写入 PROJECT_SOP
+```text
+Use the default route. No direct Owner -> Executor execution orders and no
+direct Executor -> Owner decision requests. Reviewer routes and consolidates.
+```
 
-确认后，Agent 必须把答案写入：
+## 5. Current Phase
+
+Ask the Owner:
+
+```text
+1. What is the current phase called?
+2. What is allowed in this phase?
+3. What is explicitly not allowed in this phase?
+4. What are the exit criteria?
+5. Which tests or evidence are required?
+```
+
+## 6. Reviewer Authority
+
+Ask the Owner:
+
+```text
+1. Can Reviewer block entry into the next phase?
+2. Can Reviewer require more tests, docs, screenshots, or evidence?
+3. Can Reviewer flag product goal, architecture, design, or scope drift?
+4. Can Reviewer require a scope discussion package?
+```
+
+Recommended default answer: yes to all.
+
+## 7. Mandatory ACS Invocation
+
+Ask the Owner to confirm that every task message must include the ACS invocation.
+
+Reviewer -> Executor development/design task:
+
+```text
+Please follow the ACS project standards for design/coding.
+ACS project path: E:\workspace\agent-collaboration-sop
+```
+
+Executor -> Reviewer review request:
+
+```text
+Please test and review according to ACS (E:\workspace\agent-collaboration-sop)
+project standards.
+```
+
+Replace the path if the local ACS clone is elsewhere.
+
+## 8. Write PROJECT_SOP
+
+After confirmation, write all answers into:
 
 ```text
 docs/PROJECT_SOP.md
 ```
 
-然后再进入开发或 review。
+Only then may execution or review begin.
 

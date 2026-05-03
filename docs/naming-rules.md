@@ -1,12 +1,12 @@
 # Naming Rules
 
-统一命名是为了减少跨 Agent 沟通误解。
+Consistent naming reduces cross-agent misunderstanding.
 
 ## Project Name
 
-使用项目正式名称，写入 `PROJECT_SOP.md`。
+Use the formal project name and record it in `docs/PROJECT_SOP.md`.
 
-示例：
+Examples:
 
 ```text
 geo-agent
@@ -16,14 +16,14 @@ agent-collaboration-sop
 
 ## Project Short Name
 
-项目简称应满足：
+Project short names should be:
 
-- 2-6 个字符
-- 全大写优先
-- 在项目内唯一
-- 不与 Agent 简称冲突
+- 2-6 characters
+- uppercase when practical
+- unique inside the collaboration context
+- different from agent short names
 
-示例：
+Examples:
 
 ```text
 GA
@@ -33,9 +33,9 @@ ACS
 
 ## Agent Display Name
 
-使用工具或 Agent 的真实名称。
+Use the real agent/tool name.
 
-示例：
+Examples:
 
 ```text
 Claude Code
@@ -46,13 +46,14 @@ Hermes
 
 ## Agent Short Name
 
-Agent 简称应满足：
+Agent short names should be:
 
-- 2-4 个字符
-- 不与项目简称冲突
-- 一旦确定，不随意改
+- 2-4 characters
+- unique inside the collaboration context
+- different from project short names
+- stable after Owner confirmation
 
-示例：
+Examples:
 
 ```text
 CC = Claude Code
@@ -63,16 +64,17 @@ HM = Hermes
 
 ## Owner Naming
 
-Owner 的称呼由 Owner 自己决定。
+The Owner chooses how they should be addressed.
 
-常见称呼：
+Common examples:
 
 ```text
 Owner
-项目 Owner
-产品 Owner
-负责人
+Project Owner
+Product Owner
+Responsible Owner
 ```
 
-文档中不要擅自改 Owner 称呼。
+Do not change the Owner title casually after it is recorded in
+`docs/PROJECT_SOP.md`.
 
