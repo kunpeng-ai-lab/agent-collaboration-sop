@@ -72,8 +72,12 @@ All Owner-forwarded messages that should be copied to another agent must be
 wrapped in a fenced code block.
 
 The Executor must explicitly produce a `Message To Reviewer` section whenever a
-task is acknowledged, completed, blocked, or ready for review. The first line of
-the message body must identify recipient and sender:
+task is acknowledged, completed, blocked, or ready for review.
+
+The entire `Message To Reviewer` must be wrapped in one fenced code block so the
+Owner can copy it without formatting drift.
+
+The first line of the message body must identify recipient and sender:
 
 ```text
 你好 <Reviewer>，我是 <Executor>。
@@ -81,20 +85,24 @@ the message body must identify recipient and sender:
 
 Minimum Executor acknowledgement:
 
+````text
 ```text
 Message To Reviewer:
 你好 Codex，我是 CC。
 
 我已收到并接受 ACS 路由和规范更新要求。
 ACS 本地路径：<ACS 本地路径>
+ACS 当前版本：<git rev-parse --short HEAD>
 当前角色：Executor
 Reviewer：Codex
 下一步状态：<等待任务 / 执行中 / 提交审核 / 阻塞>
 
 请按照 ACS 项目（<ACS 本地路径>）规范进行（测试/审核）。
 ```
+````
 
-A screen-only confirmation or general note is not a closed loop.
+A screen-only confirmation, non-fenced Markdown list, or general note is not a
+closed loop.
 
 ## Updating Older Agent Rules
 
@@ -106,8 +114,9 @@ old ACS wording with:
 ```text
 1. 请遵循 ACS 项目（<ACS 本地路径>）规范进行（<设计/编码>）。
 2. 请按照 ACS 项目（<ACS 本地路径>）规范进行（<测试/审核>）。
-3. Executor 给 Reviewer 的确认、阻塞说明、handoff、review 请求都必须包含 Message To Reviewer。
+3. Executor 给 Reviewer 的确认、阻塞说明、handoff、review 请求都必须整体包裹在代码块中。
 4. Message To Reviewer 正文第一句必须是：你好 <Reviewer>，我是 <Executor>。
+5. 回执必须报告 ACS 当前版本：git rev-parse --short HEAD。
 ```
 
 ## Required Project-Level Fields
@@ -129,6 +138,9 @@ agent must ask for correction before starting substantive work.
 
 If the Executor does not produce a message addressed to the Reviewer, the loop is
 not closed and the Reviewer must ask for a corrected acknowledgement or handoff.
+
+If the Executor's acknowledgement is not wrapped as a fenced code block, the loop
+is not closed.
 
 If the Executor's `Message To Reviewer` does not start with
 `你好 <Reviewer>，我是 <Executor>。`, the loop is not closed.

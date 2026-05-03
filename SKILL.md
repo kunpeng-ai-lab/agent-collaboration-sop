@@ -50,8 +50,9 @@ Replace `<ACS 本地路径>` with the real local ACS clone path. Replace
 All Owner-forwarded messages that should be copied to another agent must be
 wrapped in a fenced code block.
 
-Every Executor acknowledgement, blocked note, handoff, or review request must
-include a clear `Message To Reviewer` section and start with:
+Every Executor acknowledgement, blocked note, handoff, or review request must be
+wrapped as one fenced code block. Inside that code block, include a clear
+`Message To Reviewer` section and start with:
 
 ```text
 你好 <Reviewer>，我是 <Executor>。
@@ -59,12 +60,14 @@ include a clear `Message To Reviewer` section and start with:
 
 For example:
 
+````text
 ```text
 Message To Reviewer:
 你好 Codex，我是 CC。
 ...
 请按照 ACS 项目（<ACS 本地路径>）规范进行（测试/审核）。
 ```
+````
 
 A screen-only confirmation or general note is not a closed loop.
 
@@ -109,4 +112,5 @@ work starts.
 Executor confirmations must include a clear `Message To Reviewer` section that
 starts with `你好 <Reviewer>，我是 <Executor>。`
 
-Screen-only confirmation or general note is not a closed loop.
+The whole `Message To Reviewer` must be inside a fenced code block. Screen-only
+confirmation or general note is not a closed loop.

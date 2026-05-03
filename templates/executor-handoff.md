@@ -143,14 +143,18 @@ Not included:
 
 ## Message To Reviewer
 
-The Executor must explicitly address the Reviewer. A screen-only confirmation or
-general note is not enough. The first sentence must identify recipient and sender.
+The Executor must explicitly address the Reviewer. A screen-only confirmation,
+non-fenced Markdown list, or general note is not enough. The whole message must
+be wrapped in one fenced code block. The first sentence must identify recipient
+and sender.
 
 ```text
 Message To Reviewer:
 你好 <Reviewer>，我是 <Executor>。
 
 <write the acknowledgement, completion note, blocked reason, or review request here>
+
+ACS 当前版本：<git rev-parse --short HEAD>
 
 请按照 ACS 项目（<ACS 本地路径>）规范进行（<测试/审核>）。
 ```
