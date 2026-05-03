@@ -45,8 +45,28 @@ Executor -> Reviewer acknowledgement/review request:
 Replace `<ACS 本地路径>` with the real local ACS clone path. Replace
 `<设计/编码>` or `<测试/审核>` with the actual task type.
 
-If an agent has already stored an older ACS wording in memory or local rules, it
-must replace that wording with the templates above.
+## Message Format
+
+All Owner-forwarded messages that should be copied to another agent must be
+wrapped in a fenced code block.
+
+Every Executor acknowledgement, blocked note, handoff, or review request must
+include a clear `Message To Reviewer` section and start with:
+
+```text
+你好 <Reviewer>，我是 <Executor>。
+```
+
+For example:
+
+```text
+Message To Reviewer:
+你好 Codex，我是 CC。
+...
+请按照 ACS 项目（<ACS 本地路径>）规范进行（测试/审核）。
+```
+
+A screen-only confirmation or general note is not a closed loop.
 
 ## Workflow
 
@@ -86,5 +106,7 @@ No ledger entry means the claim is not accepted as verified.
 No ACS invocation means the receiver must ask for correction before substantive
 work starts.
 
-Executor confirmations must include a clear `Message To Reviewer` section. A
-screen-only confirmation or general note is not a closed loop.
+Executor confirmations must include a clear `Message To Reviewer` section that
+starts with `你好 <Reviewer>，我是 <Executor>。`
+
+Screen-only confirmation or general note is not a closed loop.

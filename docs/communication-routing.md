@@ -17,9 +17,6 @@ execution.
 - The Owner forwards Executor messages to the Reviewer for evaluation and
   consolidation.
 
-Reason: the Reviewer must protect scope, quality, traceability, and project
-direction before any message becomes an Owner decision request.
-
 ### 2. Reviewer -> Owner
 
 The Reviewer communicates directly with the Owner.
@@ -30,9 +27,6 @@ The Reviewer communicates directly with the Owner.
   includes the Owner's decision and sends it to the Executor.
 - The Owner may forward that Reviewer message to the Executor.
 
-Reason: Owner decisions should arrive at the Executor with context, constraints,
-quality requirements, and review expectations attached.
-
 ### 3. Owner -> Executor
 
 The Owner does not bypass the Reviewer to give direct execution instructions.
@@ -41,9 +35,6 @@ The Owner does not bypass the Reviewer to give direct execution instructions.
 - The Reviewer discusses with the Executor when needed.
 - The Reviewer then sends the Executor an instruction package that includes
   Owner intent, scope, constraints, and ACS requirements.
-
-Reason: this prevents accidental scope expansion, unreviewed direction changes,
-and "Owner said so" implementation without a design/review trail.
 
 ## Mandatory ACS Invocation
 
@@ -75,34 +66,48 @@ Replace `<ACS 本地路径>` with the actual local ACS clone path. Replace
 `<测试/审核>` with the actual task type, such as `测试`, `审核`, or
 `测试/审核`. Record the resolved path in `docs/PROJECT_SOP.md`.
 
+## Message Format
+
+All Owner-forwarded messages that should be copied to another agent must be
+wrapped in a fenced code block.
+
 The Executor must explicitly produce a `Message To Reviewer` section whenever a
-task is acknowledged, completed, blocked, or ready for review. A screen-only
-confirmation or general note is not a closed loop.
+task is acknowledged, completed, blocked, or ready for review. The first line of
+the message body must identify recipient and sender:
+
+```text
+你好 <Reviewer>，我是 <Executor>。
+```
 
 Minimum Executor acknowledgement:
 
 ```text
 Message To Reviewer:
-I have received and accepted the ACS routing/update requirements.
-ACS local path: <ACS 本地路径>
-Current role: Executor
-Reviewer: <Reviewer name>
-Next action: <waiting / implementing / handing off / blocked>
-请按照 ACS 项目（<ACS 本地路径>）规范进行（<测试/审核>）。
+你好 Codex，我是 CC。
+
+我已收到并接受 ACS 路由和规范更新要求。
+ACS 本地路径：<ACS 本地路径>
+当前角色：Executor
+Reviewer：Codex
+下一步状态：<等待任务 / 执行中 / 提交审核 / 阻塞>
+
+请按照 ACS 项目（<ACS 本地路径>）规范进行（测试/审核）。
 ```
+
+A screen-only confirmation or general note is not a closed loop.
 
 ## Updating Older Agent Rules
 
 If an agent already stored an older ACS wording in long-term memory, project
-rules, or local prompts, the Reviewer must send an explicit update instruction:
+rules, or local prompts, the Reviewer must send an explicit update instruction.
+The instruction must be wrapped in a fenced code block and must require replacing
+old ACS wording with:
 
 ```text
-Please replace any older ACS wording in your memory/rules with the latest ACS
-templates:
 1. 请遵循 ACS 项目（<ACS 本地路径>）规范进行（<设计/编码>）。
 2. 请按照 ACS 项目（<ACS 本地路径>）规范进行（<测试/审核>）。
-Use the actual ACS local path for this machine.
-Executor acknowledgements and handoffs must include a Message To Reviewer section.
+3. Executor 给 Reviewer 的确认、阻塞说明、handoff、review 请求都必须包含 Message To Reviewer。
+4. Message To Reviewer 正文第一句必须是：你好 <Reviewer>，我是 <Executor>。
 ```
 
 ## Required Project-Level Fields
@@ -124,6 +129,9 @@ agent must ask for correction before starting substantive work.
 
 If the Executor does not produce a message addressed to the Reviewer, the loop is
 not closed and the Reviewer must ask for a corrected acknowledgement or handoff.
+
+If the Executor's `Message To Reviewer` does not start with
+`你好 <Reviewer>，我是 <Executor>。`, the loop is not closed.
 
 If the Owner directly gives work to the Executor, the Executor must route it back
 through the Reviewer unless the project SOP has an explicit emergency exception.
