@@ -43,7 +43,6 @@ Approved Communication Route:
 Executor -> Reviewer -> Owner
 Owner -> Reviewer -> Executor
 ```
-
 Routing Exceptions:
 
 ## Current Phase
@@ -79,6 +78,7 @@ Required Verification:
 21. Reviewer -> Executor development/design tasks must include: "请遵循 ACS 项目（<ACS 本地路径>）规范进行（<设计/编码>）。"
 22. Executor -> Reviewer review requests must include: "请按照 ACS 项目（<ACS 本地路径>）规范进行（<测试/审核>）。"
 23. If ACS invocation is missing, the receiver must ask for correction before substantive work starts.
+24. Executor acknowledgements, blocked notes, and handoffs must include a clear "Message To Reviewer" section. A screen-only confirmation is not a closed loop.
 
 ## Development Package Requirements
 
@@ -118,6 +118,7 @@ Executor must submit:
 - verification evidence and screenshots
 - risks
 - explicit review request
+- Message To Reviewer
 
 Reviewer must submit:
 

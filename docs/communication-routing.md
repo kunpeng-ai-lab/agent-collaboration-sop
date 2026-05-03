@@ -52,7 +52,7 @@ ACS rules and project path.
 
 ### Reviewer -> Executor
 
-For every development or design task, the Reviewer must include:
+For every development, design, or coding task, the Reviewer must include:
 
 ```text
 请遵循 ACS 项目（<ACS 本地路径>）规范进行（<设计/编码>）。
@@ -64,14 +64,32 @@ Replace `<ACS 本地路径>` with the actual local ACS clone path. Replace
 
 ### Executor -> Reviewer
 
-For every review request, the Executor must include:
+For every testing, review, acknowledgement, blocked note, or handoff, the
+Executor must include:
 
 ```text
 请按照 ACS 项目（<ACS 本地路径>）规范进行（<测试/审核>）。
 ```
 
-Replace `<ACS 本地路径>` with the actual local ACS clone path and record it in
-`docs/PROJECT_SOP.md`.
+Replace `<ACS 本地路径>` with the actual local ACS clone path. Replace
+`<测试/审核>` with the actual task type, such as `测试`, `审核`, or
+`测试/审核`. Record the resolved path in `docs/PROJECT_SOP.md`.
+
+The Executor must explicitly produce a `Message To Reviewer` section whenever a
+task is acknowledged, completed, blocked, or ready for review. A screen-only
+confirmation or general note is not a closed loop.
+
+Minimum Executor acknowledgement:
+
+```text
+Message To Reviewer:
+I have received and accepted the ACS routing/update requirements.
+ACS local path: <ACS 本地路径>
+Current role: Executor
+Reviewer: <Reviewer name>
+Next action: <waiting / implementing / handing off / blocked>
+请按照 ACS 项目（<ACS 本地路径>）规范进行（<测试/审核>）。
+```
 
 ## Updating Older Agent Rules
 
@@ -84,6 +102,7 @@ templates:
 1. 请遵循 ACS 项目（<ACS 本地路径>）规范进行（<设计/编码>）。
 2. 请按照 ACS 项目（<ACS 本地路径>）规范进行（<测试/审核>）。
 Use the actual ACS local path for this machine.
+Executor acknowledgements and handoffs must include a Message To Reviewer section.
 ```
 
 ## Required Project-Level Fields
@@ -102,6 +121,9 @@ Each project using ACS must record:
 
 If the mandatory ACS invocation is missing from a task handoff, the receiving
 agent must ask for correction before starting substantive work.
+
+If the Executor does not produce a message addressed to the Reviewer, the loop is
+not closed and the Reviewer must ask for a corrected acknowledgement or handoff.
 
 If the Owner directly gives work to the Executor, the Executor must route it back
 through the Reviewer unless the project SOP has an explicit emergency exception.

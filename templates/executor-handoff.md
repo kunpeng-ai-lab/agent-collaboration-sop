@@ -141,11 +141,14 @@ Not included:
 
 - 
 
-## Review Request
+## Message To Reviewer
 
-ACS invocation:
+The Executor must explicitly address the Reviewer. A screen-only confirmation or
+general note is not enough.
 
 ```text
+Message To Reviewer:
+<write the acknowledgement, completion note, blocked reason, or review request here>
 请按照 ACS 项目（<ACS 本地路径>）规范进行（<测试/审核>）。
 ```
 

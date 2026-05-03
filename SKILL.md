@@ -36,15 +36,14 @@ Reviewer -> Executor development/design task:
 请遵循 ACS 项目（<ACS 本地路径>）规范进行（<设计/编码>）。
 ```
 
-Executor -> Reviewer review request:
+Executor -> Reviewer acknowledgement/review request:
 
 ```text
 请按照 ACS 项目（<ACS 本地路径>）规范进行（<测试/审核>）。
 ```
 
 Replace `<ACS 本地路径>` with the real local ACS clone path. Replace
-`<设计/编码>` or `<测试/审核>` with the actual task type, such as `设计`,
-`编码`, `设计/编码`, `测试`, `审核`, or `测试/审核`.
+`<设计/编码>` or `<测试/审核>` with the actual task type.
 
 If an agent has already stored an older ACS wording in memory or local rules, it
 must replace that wording with the templates above.
@@ -86,3 +85,6 @@ No ledger entry means the claim is not accepted as verified.
 
 No ACS invocation means the receiver must ask for correction before substantive
 work starts.
+
+Executor confirmations must include a clear `Message To Reviewer` section. A
+screen-only confirmation or general note is not a closed loop.
