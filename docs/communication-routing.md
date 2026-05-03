@@ -4,6 +4,10 @@ This document defines the long-term communication route for Agent Collaboration
 SOP projects. It is intentionally strict: the goal is to keep one clear review
 authority between the Owner and the Executor.
 
+See also:
+
+- `docs/acs-sync-rules.md`
+
 ## Long-Term Communication Flow
 
 ### 1. Executor -> Owner
@@ -35,6 +39,21 @@ The Owner does not bypass the Reviewer to give direct execution instructions.
 - The Reviewer discusses with the Executor when needed.
 - The Reviewer then sends the Executor an instruction package that includes
   Owner intent, scope, constraints, and ACS requirements.
+
+## Mandatory ACS Sync
+
+Before accepting or sending a task, apply `docs/acs-sync-rules.md`.
+
+Minimum sync command:
+
+```powershell
+cd <ACS 本地路径>
+git pull origin main
+git rev-parse --short HEAD
+```
+
+The current message or handoff must include ACS local path, ACS version, and
+whether `git pull origin main` was executed.
 
 ## Mandatory ACS Invocation
 
@@ -93,6 +112,7 @@ Message To Reviewer:
 我已收到并接受 ACS 路由和规范更新要求。
 ACS 本地路径：<ACS 本地路径>
 ACS 当前版本：<git rev-parse --short HEAD>
+已执行：git pull origin main
 当前角色：Executor
 Reviewer：Codex
 下一步状态：<等待任务 / 执行中 / 提交审核 / 阻塞>
@@ -112,11 +132,13 @@ The instruction must be wrapped in a fenced code block and must require replacin
 old ACS wording with:
 
 ```text
-1. 请遵循 ACS 项目（<ACS 本地路径>）规范进行（<设计/编码>）。
-2. 请按照 ACS 项目（<ACS 本地路径>）规范进行（<测试/审核>）。
-3. Executor 给 Reviewer 的确认、阻塞说明、handoff、review 请求都必须整体包裹在代码块中。
-4. Message To Reviewer 正文第一句必须是：你好 <Reviewer>，我是 <Executor>。
-5. 回执必须报告 ACS 当前版本：git rev-parse --short HEAD。
+1. 每天 06:00 或每天第一次任务前同步 ACS；Owner/Reviewer 明确要求时立即同步。
+2. 同步命令：cd <ACS 本地路径>; git pull origin main; git rev-parse --short HEAD。
+3. 请遵循 ACS 项目（<ACS 本地路径>）规范进行（<设计/编码>）。
+4. 请按照 ACS 项目（<ACS 本地路径>）规范进行（<测试/审核>）。
+5. Executor 给 Reviewer 的确认、阻塞说明、handoff、review 请求都必须整体包裹在代码块中。
+6. Message To Reviewer 正文第一句必须是：你好 <Reviewer>，我是 <Executor>。
+7. 回执必须报告 ACS 当前版本。
 ```
 
 ## Required Project-Level Fields
@@ -132,6 +154,9 @@ Each project using ACS must record:
 - whether the Owner has approved any exception to the routing rules
 
 ## Redline
+
+If ACS sync evidence is missing, the receiving agent must ask for correction
+before substantive work.
 
 If the mandatory ACS invocation is missing from a task handoff, the receiving
 agent must ask for correction before starting substantive work.

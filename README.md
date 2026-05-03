@@ -55,6 +55,15 @@ See [docs/communication-routing.md](docs/communication-routing.md).
 
 ## Mandatory ACS Invocation
 
+Before project work, sync ACS according to
+[docs/acs-sync-rules.md](docs/acs-sync-rules.md):
+
+```powershell
+cd <ACS 本地路径>
+git pull origin main
+git rev-parse --short HEAD
+```
+
 Every development/design task from Reviewer to Executor must include:
 
 ```text

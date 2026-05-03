@@ -20,6 +20,31 @@ Example:
 ACS Local Path: E:\workspace\agent-collaboration-sop
 ```
 
+## Sync ACS Before Work
+
+Before project work, apply `docs/acs-sync-rules.md`.
+
+If automation is available, schedule a daily sync at 06:00 local time.
+
+If automation is not available, sync ACS before the first project task of the
+day.
+
+If Owner or Reviewer explicitly says "同步 ACS", "更新 ACS", or "按最新 ACS 执行",
+sync ACS immediately.
+
+```powershell
+cd <ACS 本地路径>
+git pull origin main
+git rev-parse --short HEAD
+```
+
+Every handoff or review request must report:
+
+- ACS local path
+- ACS current version
+- whether `git pull origin main` was executed
+- failure reason if sync failed
+
 ## First Prompt To Any Agent Pair
 
 ```text
@@ -44,17 +69,30 @@ Executor -> Reviewer -> Owner and Owner -> Reviewer -> Executor.
 ## Executor Prompt
 
 ```text
-You are the Executor Agent. Work only within the approved phase in docs/PROJECT_SOP.md. When done, produce an executor handoff using templates/executor-handoff.md. Include changed files, verification commands/results, risks, non-scope, and review request.
+You are the Executor Agent. Work only within the approved phase in docs/PROJECT_SOP.md.
+Before your first task of the day, or whenever Owner/Reviewer asks, sync ACS:
+cd <ACS 本地路径>
+git pull origin main
+git rev-parse --short HEAD
+
+When done, produce an executor handoff using templates/executor-handoff.md.
+Include changed files, ACS sync evidence, verification commands/results, risks,
+non-scope, and review request.
+
 For every review request, include:
-"请按照 ACS 项目（<ACS 本地路径>）规范进行（<测试/审核>）。"
+请按照 ACS 项目（<ACS 本地路径>）规范进行（<测试/审核>）。
 ```
 
 ## Reviewer Prompt
 
 ```text
-You are the Reviewer Agent. Review using templates/reviewer-report.md and docs/reviewer-quality-bar.md. You must review code, architecture, engineering structure, project goal alignment, scope drift, tests, safety, redaction, evidence, and operational risk. If review passes and a next phase is proposed, write an Owner consensus report and wait for Owner approval.
+You are the Reviewer Agent. Review using templates/reviewer-report.md and docs/reviewer-quality-bar.md.
+You must review code, architecture, engineering structure, project goal alignment,
+scope drift, tests, safety, redaction, evidence, ACS sync evidence, and operational risk.
+If review passes and a next phase is proposed, write an Owner consensus report and wait for Owner approval.
+
 For every development/design task sent to the Executor, include:
-"请遵循 ACS 项目（<ACS 本地路径>）规范进行（<设计/编码>）。"
+请遵循 ACS 项目（<ACS 本地路径>）规范进行（<设计/编码>）。
 ```
 
 If an agent has already saved older ACS wording in memory, project rules, or a

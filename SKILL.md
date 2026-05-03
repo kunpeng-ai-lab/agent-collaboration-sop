@@ -1,6 +1,6 @@
 ---
 name: agent-collaboration-sop
-description: Use when setting up or running two-agent collaboration in a shared project, especially an Executor agent paired with a Reviewer agent. Enforces communication routing, Owner approval gates, reviewer quality checks beyond code review, evidence ledgers, screenshots, project-goal alignment, technical design review, and ACS invocation phrases for Codex, Claude Code, OpenClaw, Hermes, or other agents.
+description: Use when setting up or running two-agent collaboration in a shared project, especially an Executor agent paired with a Reviewer agent. Enforces communication routing, Owner approval gates, reviewer quality checks beyond code review, evidence ledgers, screenshots, project-goal alignment, technical design review, ACS sync rules, and ACS invocation phrases for Codex, Claude Code, OpenClaw, Hermes, or other agents.
 ---
 
 # Agent Collaboration SOP
@@ -27,6 +27,27 @@ The Executor does not directly ask the Owner for decisions. The Owner does not
 bypass the Reviewer to give execution instructions. The Reviewer consolidates
 Owner intent, scope, constraints, and ACS requirements before sending work to the
 Executor.
+
+## Mandatory ACS Sync
+
+Before project work, read `docs/acs-sync-rules.md`.
+
+Sync ACS when:
+
+- it is 06:00 local time and scheduled jobs are available
+- this is the first project task of the day
+- Owner or Reviewer explicitly says to sync/update/use latest ACS
+
+Required commands:
+
+```powershell
+cd <ACS 本地路径>
+git pull origin main
+git rev-parse --short HEAD
+```
+
+Report the ACS local path, current version, and whether `git pull origin main`
+was executed. Do not claim sync without a version.
 
 ## Mandatory ACS Invocation
 
@@ -64,8 +85,12 @@ For example:
 ```text
 Message To Reviewer:
 你好 Codex，我是 CC。
-...
-请按照 ACS 项目（<ACS 本地路径>）规范进行（测试/审核）。
+
+ACS 本地路径：D:\workspace\agent-collaboration-sop
+ACS 当前版本：<git rev-parse --short HEAD>
+已执行：git pull origin main
+
+请按照 ACS 项目（D:\workspace\agent-collaboration-sop）规范进行（测试/审核）。
 ```
 ````
 
@@ -73,23 +98,25 @@ A screen-only confirmation or general note is not a closed loop.
 
 ## Workflow
 
-1. Initialize the project using `docs/initialization-questionnaire.md`.
-2. Copy `templates/project-sop.md` into the target project's
+1. Sync ACS according to `docs/acs-sync-rules.md`.
+2. Initialize the project using `docs/initialization-questionnaire.md`.
+3. Copy `templates/project-sop.md` into the target project's
    `docs/PROJECT_SOP.md`.
-3. Record project short name, Owner title, Executor short name, Reviewer short
+4. Record project short name, Owner title, Executor short name, Reviewer short
    name, ACS local path, scope, non-scope, exit criteria, and redline rules.
-4. Executor prepares a development package for non-trivial work.
-5. Executor implements only within approved scope and writes handoff using
+5. Executor prepares a development package for non-trivial work.
+6. Executor implements only within approved scope and writes handoff using
    `templates/executor-handoff.md`.
-6. Reviewer reviews using `templates/reviewer-report.md`,
+7. Reviewer reviews using `templates/reviewer-report.md`,
    `docs/reviewer-quality-bar.md`, `docs/reviewer-testing-playbook.md`, and
    `docs/technical-design-rules.md`.
-7. Reviewer sends Owner a consensus report using
+8. Reviewer sends Owner a consensus report using
    `templates/owner-consensus-report.md`.
-8. Executor starts the next phase only after Owner approval.
+9. Executor starts the next phase only after Owner approval.
 
 ## Reviewer Must Check
 
+- ACS sync evidence
 - project goal alignment
 - approved design and plan alignment
 - architecture and module boundaries
@@ -105,6 +132,8 @@ A screen-only confirmation or general note is not a closed loop.
 Green tests are evidence, not approval.
 
 No ledger entry means the claim is not accepted as verified.
+
+No ACS sync evidence means the handoff is incomplete.
 
 No ACS invocation means the receiver must ask for correction before substantive
 work starts.

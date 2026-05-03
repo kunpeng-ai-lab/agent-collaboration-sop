@@ -79,6 +79,9 @@ Required Verification:
 22. Executor -> Reviewer review requests must include: "请按照 ACS 项目（<ACS 本地路径>）规范进行（<测试/审核>）。"
 23. If ACS invocation is missing, the receiver must ask for correction before substantive work starts.
 24. Executor acknowledgements, blocked notes, and handoffs must include a clear "Message To Reviewer" section. A screen-only confirmation is not a closed loop.
+25. Agents must sync ACS at 06:00 when scheduled automation is available, or before the first project task of the day when automation is unavailable.
+26. If Owner or Reviewer explicitly asks to sync/update/use latest ACS, the agent must sync immediately.
+27. Handoffs and review requests must report ACS local path, ACS current version, and whether `git pull origin main` was executed.
 
 ## Development Package Requirements
 
@@ -114,6 +117,7 @@ Executor must submit:
 - development package reference
 - changed files
 - summary
+- ACS sync evidence
 - tests run
 - verification evidence and screenshots
 - risks
