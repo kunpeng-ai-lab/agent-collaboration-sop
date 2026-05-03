@@ -73,6 +73,8 @@ The package must include:
 
 - plan
 - design notes
+- technical/architecture research
+- module boundary and decoupling notes
 - test cases
 - constraints and non-scope
 - minimal-change strategy
@@ -87,6 +89,10 @@ architecture-affecting.
 Owner approval is required when the package changes phase scope, public output,
 commercial boundary, deployment, upstream PR, credentials, or customer-visible
 delivery.
+
+See also:
+
+- `docs/technical-design-rules.md`
 
 ## 4. Minimal Change Rule
 
@@ -115,6 +121,8 @@ Reviewer must check:
 - project goal alignment
 - design alignment
 - architecture boundaries
+- module decoupling and dependency direction
+- whether technical and architecture research is sufficient
 - engineering structure
 - comments and human-debuggability
 - test quality

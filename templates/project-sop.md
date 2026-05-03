@@ -53,6 +53,9 @@ Required Verification:
 12. Reviewer must verify the evidence chain before asking Owner for approval.
 13. Reviewer must challenge test coverage. Happy-path-only tests are not enough for risky work.
 14. Reviewer must flag design, plan, architecture, or project-goal drift even when code runs and tests pass.
+15. Architecture-affecting work must include technical research and design notes before coding.
+16. Modules must be reasonably decoupled. Reviewer must reject avoidable tight coupling.
+17. Design must state module boundaries, dependency direction, data flow, and failure behavior.
 
 ## Development Package Requirements
 
@@ -60,6 +63,11 @@ Before non-trivial implementation, Executor must prepare:
 
 - plan
 - design notes
+- technical/architecture research
+- module boundaries
+- dependency direction
+- data flow
+- failure behavior
 - test cases
 - constraints
 - explicit non-scope
@@ -95,6 +103,7 @@ Reviewer must submit:
 - verification
 - test coverage assessment
 - design/plan drift assessment
+- technical design and decoupling assessment
 - ledger links and screenshot/evidence references
 - risks
 - Owner decision items

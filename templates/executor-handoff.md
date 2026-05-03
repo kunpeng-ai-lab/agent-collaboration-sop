@@ -27,6 +27,32 @@ Design notes:
 
 - 
 
+Technical/architecture research:
+
+- 
+
+Options considered:
+
+| Option | Pros | Cons | Decision |
+| --- | --- | --- | --- |
+| | | | |
+
+Module boundaries:
+
+- 
+
+Dependency direction:
+
+- 
+
+Data flow:
+
+- 
+
+Failure behavior:
+
+- 
+
 Test cases:
 
 - 

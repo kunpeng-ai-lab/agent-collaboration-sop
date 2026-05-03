@@ -93,6 +93,7 @@ agent-collaboration-sop/
     naming-rules.md
     reviewer-quality-bar.md
     reviewer-testing-playbook.md
+    technical-design-rules.md
     engineering-governance.md
   templates/
     project-sop.md

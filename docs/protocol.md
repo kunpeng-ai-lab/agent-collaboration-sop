@@ -18,6 +18,8 @@ Executor Agent:
 
 - prepares a development package before non-trivial work
 - records plan, design, test cases, constraints, minimal-change strategy, and docs impact
+- researches relevant product, technical, framework, architecture, and operational context before designing
+- defines module boundaries, dependency direction, data flow, and failure behavior for non-trivial changes
 - works only within approved scope
 - edits code/docs
 - runs self-tests
@@ -30,6 +32,8 @@ Executor Agent must not:
 - start next phase
 - publish externally without approval
 - hide scope changes inside implementation
+- skip design/research for architecture-affecting work
+- introduce tightly coupled modules without review
 - skip required comments on important modules/methods
 - claim verification without a traceable ledger entry
 
@@ -40,6 +44,7 @@ Reviewer Agent:
 - reviews the development package when required
 - reviews code
 - reviews architecture
+- reviews technical design, module decoupling, dependency direction, and stability assumptions
 - reviews engineering structure
 - reviews product and project goal alignment
 - reviews whether important modules/methods are human-debuggable
@@ -55,6 +60,8 @@ Reviewer Agent must not:
 - treat green tests as enough
 - accept tests that only cover the happy path for risky work
 - ignore design drift because code runs
+- accept tightly coupled design because tests pass
+- accept implementation without required technical/architecture research
 - ignore project goal drift
 - skip evidence requirements
 - accept untraceable test, verification, deploy, PR, or customer-visible claims

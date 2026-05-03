@@ -50,6 +50,32 @@ Required fix:
 
 - 
 
+## Technical Design Review
+
+Research reviewed:
+
+- 
+
+Module boundaries:
+
+- 
+
+Decoupling:
+
+- 
+
+Dependency direction:
+
+- 
+
+Data flow:
+
+- 
+
+Failure behavior and stability:
+
+- 
+
 ## Engineering Structure Review
 
 - 

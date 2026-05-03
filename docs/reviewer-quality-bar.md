@@ -7,6 +7,8 @@ The reviewer must protect the project from:
 - code that runs but violates the product goal
 - tests that pass but do not cover risk
 - architecture drift
+- tight coupling hidden behind passing tests
+- weak or missing technical design research
 - scope creep
 - weak evidence
 - unsafe release or upstream behavior
@@ -28,11 +30,15 @@ Reviewer must compare implementation against:
 
 - approved plan
 - approved design
+- technical research and option comparison
 - explicit non-scope
 - previous Owner decisions
 - project SOP
 
 Any design drift must be called out, even if tests pass.
+
+Reviewer must also call out missing design evidence when the change is
+architecture-affecting or cross-module.
 
 ### 3. Architecture Quality
 
@@ -43,6 +49,10 @@ Reviewer must check:
 - data ownership
 - state transitions
 - extension points
+- decoupling between domain logic, adapters, I/O, formatting, and persistence
+- whether runtime-specific logic is isolated behind adapters/profiles
+- whether schemas/contracts are explicit across module boundaries
+- whether failure behavior is designed, not accidental
 - whether abstractions are necessary
 - whether the implementation blocks future planned work
 
@@ -146,4 +156,3 @@ Next step recommendation:
 ```
 
 Green tests alone are never enough for a pass.
-
