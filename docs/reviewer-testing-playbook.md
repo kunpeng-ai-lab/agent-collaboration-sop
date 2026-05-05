@@ -11,6 +11,7 @@ Before accepting a handoff, reviewer must inspect the executor's test plan.
 
 The plan must name:
 
+- Given / When / Then behavior scenarios
 - behavior under test
 - happy paths
 - failure paths
@@ -22,6 +23,9 @@ The plan must name:
 
 If the test plan is missing, vague, or only covers the happy path, review should
 return `needs changes`.
+
+If behavior scenarios are missing for non-trivial work, review should return
+`needs changes` unless Owner explicitly approved a spike.
 
 ## 2. Risk-Based Test Matrix
 
@@ -118,6 +122,7 @@ NEEDS CHANGES:
 
 Before pass:
 
+- [ ] I checked Given / When / Then behavior scenarios.
 - [ ] I checked the approved plan/design.
 - [ ] I checked explicit non-scope.
 - [ ] I inspected test coverage.
@@ -127,4 +132,3 @@ Before pass:
 - [ ] I checked evidence ledger/screenshot requirements.
 - [ ] I listed remaining coverage gaps.
 - [ ] I identified Owner decision items.
-

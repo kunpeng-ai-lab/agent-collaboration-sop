@@ -117,6 +117,7 @@ A screen-only confirmation or general note is not a closed loop.
 ## Reviewer Must Check
 
 - ACS sync evidence
+- Given / When / Then behavior scenarios for non-trivial work
 - project goal alignment
 - approved design and plan alignment
 - architecture and module boundaries
@@ -134,6 +135,9 @@ Green tests are evidence, not approval.
 No ledger entry means the claim is not accepted as verified.
 
 No ACS sync evidence means the handoff is incomplete.
+
+No behavior scenarios for non-trivial work means the development package is
+incomplete.
 
 No ACS invocation means the receiver must ask for correction before substantive
 work starts.

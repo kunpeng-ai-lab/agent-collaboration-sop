@@ -82,6 +82,8 @@ Required Verification:
 25. Agents must sync ACS at 06:00 when scheduled automation is available, or before the first project task of the day when automation is unavailable.
 26. If Owner or Reviewer explicitly asks to sync/update/use latest ACS, the agent must sync immediately.
 27. Handoffs and review requests must report ACS local path, ACS current version, and whether `git pull origin main` was executed.
+28. Non-trivial work must include Given / When / Then behavior scenarios before implementation.
+29. Reviewer must verify tests/evidence against the behavior scenarios.
 
 ## Development Package Requirements
 
@@ -89,6 +91,7 @@ Before non-trivial implementation, Executor must prepare:
 
 - plan
 - design notes
+- Given / When / Then behavior scenarios
 - technical/architecture research
 - module boundaries
 - dependency direction

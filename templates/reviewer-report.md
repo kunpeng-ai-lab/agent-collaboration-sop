@@ -23,6 +23,10 @@ Executor test plan reviewed:
 
 - 
 
+BDD behavior scenarios reviewed:
+
+-
+
 Coverage accepted:
 
 - main paths:
@@ -35,6 +39,10 @@ Coverage accepted:
 Coverage gaps:
 
 - 
+
+Behavior scenario gaps:
+
+-
 
 ## Findings
 

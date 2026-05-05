@@ -132,6 +132,7 @@ See:
 - [docs/reviewer-testing-playbook.md](docs/reviewer-testing-playbook.md)
 - [docs/technical-design-rules.md](docs/technical-design-rules.md)
 - [docs/engineering-governance.md](docs/engineering-governance.md)
+- [docs/bdd-principles.md](docs/bdd-principles.md)
 
 ## Project Structure
 

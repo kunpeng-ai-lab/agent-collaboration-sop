@@ -93,6 +93,21 @@ delivery.
 See also:
 
 - `docs/technical-design-rules.md`
+- `docs/bdd-principles.md`
+
+## 3.1 Behavior Scenarios Before Implementation
+
+For non-trivial work, Executor must define key behavior scenarios before
+implementation using Given / When / Then.
+
+Reviewer must check whether tests and evidence cover those behavior scenarios.
+
+Rule:
+
+```text
+No behavior scenario for non-trivial work -> development package incomplete.
+Behavior scenario not covered by test/evidence -> review gap.
+```
 
 ## 4. Minimal Change Rule
 

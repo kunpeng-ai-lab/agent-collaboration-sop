@@ -17,6 +17,13 @@ Why:
 
 - 
 
+## ACS Sync Evidence
+
+ACS local path:
+ACS current version:
+Executed `git pull origin main`: yes / no
+Sync failure reason, if any:
+
 ## Development Package
 
 Plan:
@@ -30,6 +37,24 @@ Design notes:
 Technical/architecture research:
 
 - 
+
+Behavior scenarios:
+
+```text
+Given <context>
+When <action>
+Then <expected behavior>
+```
+
+Additional scenarios:
+
+| Scenario | Given | When | Then | Test/Evidence |
+| --- | --- | --- | --- | --- |
+| happy path | | | | |
+| failure path | | | | |
+| boundary case | | | | |
+| regression case | | | | |
+| security/redaction/export case | | | | |
 
 Options considered:
 

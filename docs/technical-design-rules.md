@@ -27,6 +27,7 @@ The design note must include:
 
 - goal and non-goal
 - user/product problem
+- Given / When / Then behavior scenarios
 - current architecture context
 - researched options
 - recommended option and why
@@ -100,6 +101,7 @@ Reviewer must check:
 - is failure behavior explicit?
 - are safety gates preserved?
 - is the test strategy aligned with design risks?
+- do behavior scenarios cover happy, failure, boundary, and regression paths?
 - can a human engineer debug and maintain it?
 
 Reviewer may require design changes even when code works and tests pass.
@@ -119,4 +121,3 @@ Store at least one of:
 
 Owner approval must reference the design evidence when the change affects scope,
 architecture, public API, production, upstream, or customer-visible output.
-
