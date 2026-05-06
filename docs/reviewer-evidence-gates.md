@@ -32,9 +32,42 @@ Check:
 - evidence ledger exists
 - command outputs are captured
 - screenshots exist when needed
+- phase-close dialogue screenshots are captured or explicitly marked N/A
 - staged and unstaged diffs are checked
 - links, PRs, deploys, or CI states are recorded when relevant
 - the evidence does not contradict the handoff
+
+## Phase-Close Dialogue Capture
+
+Before a phase can be closed, the Reviewer must remind the Owner to capture the
+Executor-side conversation evidence when the Executor is running in a separate
+chat/app that the Reviewer cannot screenshot directly.
+
+Required dialogue evidence for substantial phases:
+
+- Executor handoff screenshot
+- Reviewer findings screenshot or review summary screenshot
+- Executor correction screenshot, when findings existed
+- Owner decision screenshot, when Owner approval or scope decision was needed
+- final approval / closure screenshot
+
+The Reviewer must record one of these states in the phase evidence ledger:
+
+- `captured`: screenshot or recording exists and path is listed
+- `pending-owner-capture`: Owner has been reminded and capture is pending
+- `not-applicable`: short reason is listed
+
+Recommended paths:
+
+```text
+evidence/<phase>/dialogue/raw/
+evidence/<phase>/dialogue/redacted/
+```
+
+Raw dialogue screenshots may contain private paths, user names, branch names,
+tokens, account names, or business context. Any screenshot reused outside the
+private project evidence chain, including ACS case studies or self-media
+material, must pass Reviewer redaction approval first.
 
 Required for git-based work:
 
@@ -113,4 +146,5 @@ Review must return `needs changes` when:
 - implementation drifts from approved architecture
 - scope-sensitive paths changed without approval
 - staged changes are not checked
-
+- phase close claims completion while required dialogue capture status is
+  missing from the evidence ledger

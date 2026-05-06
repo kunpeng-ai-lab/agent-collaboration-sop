@@ -34,6 +34,15 @@ Screenshots:
 
 - 
 
+Dialogue screenshots / recordings:
+
+- Executor handoff:
+- Reviewer findings:
+- Executor correction:
+- Owner decision:
+- Final approval / closure:
+- Redaction status:
+
 Verification commands and results:
 
 ```text

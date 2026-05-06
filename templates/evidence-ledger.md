@@ -31,6 +31,26 @@ Required screenshot cases:
 - customer-visible output
 - remote console/dashboard state
 
+## Dialogue Capture
+
+Phase-close dialogue evidence is required for substantial work. If the Executor
+runs in a separate chat/app, the Reviewer must remind Owner to capture the
+Executor-side conversation before closing the phase.
+
+| Type | File | Captured By | Redaction Status | Notes |
+| --- | --- | --- | --- | --- |
+| Executor handoff | | | | |
+| Reviewer findings | | | | |
+| Executor correction | | | | |
+| Owner decision | | | | |
+| Final approval / closure | | | | |
+
+Allowed status values:
+
+- captured
+- pending-owner-capture
+- not-applicable
+
 ## Local Verification
 
 ```text
