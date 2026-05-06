@@ -114,6 +114,23 @@ Reviewer must verify:
 - links, commits, PRs, issues, CI, deployment state
 - whether evidence supports the claimed conclusion
 
+Use `docs/reviewer-evidence-gates.md`.
+
+### 8.1 Product And Page-Level Validation
+
+For UI, prototype, workflow, report, public content, customer-visible output, or
+any user-operated surface, Reviewer must perform product validation.
+
+Reviewer must check:
+
+- the relevant page or workflow, not only the source diff
+- the intended user role and job-to-be-done
+- visible states, empty states, and failure states when relevant
+- screenshots or visual evidence when practical
+- whether the result matches Owner's product intent
+
+Use `docs/reviewer-product-validation.md`.
+
 ### 9. Operational Risk
 
 Reviewer must check:

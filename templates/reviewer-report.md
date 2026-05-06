@@ -17,6 +17,27 @@ Review result: pass / needs changes
 
 ```
 
+## Four Evidence Gates
+
+Conversation summary should include only the gate results and this report path.
+Keep the detailed evidence here in the project file.
+
+Detailed report path:
+
+- 
+
+| Gate | Result | Evidence |
+| --- | --- | --- |
+| Command gate | pass / needs changes / not applicable | |
+| Evidence gate | pass / needs changes / not applicable | |
+| Product gate | pass / needs changes / not applicable | |
+| Architecture gate | pass / needs changes / not applicable | |
+
+See:
+
+- `docs/reviewer-evidence-gates.md`
+- `docs/reviewer-product-validation.md`
+
 ## Test Strategy Review
 
 Executor test plan reviewed:
@@ -55,6 +76,33 @@ Issue:
 Required fix:
 
 ## Architecture Review
+
+- 
+
+## Product / Page-Level Validation
+
+Applies to UI, prototype, workflow, report, customer-visible, or public-facing
+work.
+
+Product validation result: pass / needs changes / not applicable
+
+User role checked:
+
+- 
+
+Pages or workflows checked:
+
+- 
+
+Manual/browser validation method:
+
+- 
+
+Screenshots or visual evidence:
+
+- 
+
+Detailed product validation report path:
 
 - 
 
@@ -116,6 +164,18 @@ Failure behavior and stability:
 
 - 
 
+Evidence checked:
+
+- command outputs:
+- staged and unstaged diffs:
+- screenshots:
+- ledger:
+- report paths:
+
+Evidence contradictions found:
+
+- 
+
 ## Operational Risk
 
 - 
@@ -127,6 +187,21 @@ Failure behavior and stability:
 ## Next Step Recommendation
 
 - 
+
+## Chat Summary Requirement
+
+When sending review results in chat, include only a short summary plus report
+paths, for example:
+
+```text
+Evidence gates:
+- Command gate: pass
+- Evidence gate: pass
+- Product gate: pass / not applicable / needs changes
+- Architecture gate: pass
+Detailed review report: reviews/<phase>/codex-review.md
+Detailed product validation report: reviews/<phase>/product-validation.md
+```
 
 ## Message To Executor
 

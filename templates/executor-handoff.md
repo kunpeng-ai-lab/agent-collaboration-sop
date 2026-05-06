@@ -152,6 +152,27 @@ Screenshots:
 
 - 
 
+## Product / Page-Level Evidence
+
+Required when the task affects UI, prototype, workflow, report, public content,
+customer-visible output, or any user-operated surface.
+
+Pages or workflows changed:
+
+- 
+
+Manual validation performed:
+
+- 
+
+Screenshots or visual evidence:
+
+- 
+
+Product validation report draft path, if prepared:
+
+- 
+
 ## Scope Notes
 
 In scope:

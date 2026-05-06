@@ -130,9 +130,23 @@ See:
 
 - [docs/reviewer-quality-bar.md](docs/reviewer-quality-bar.md)
 - [docs/reviewer-testing-playbook.md](docs/reviewer-testing-playbook.md)
+- [docs/reviewer-evidence-gates.md](docs/reviewer-evidence-gates.md)
+- [docs/reviewer-product-validation.md](docs/reviewer-product-validation.md)
 - [docs/technical-design-rules.md](docs/technical-design-rules.md)
 - [docs/engineering-governance.md](docs/engineering-governance.md)
 - [docs/bdd-principles.md](docs/bdd-principles.md)
+- [docs/case-study-redaction.md](docs/case-study-redaction.md)
+
+## Case Studies And Anti-Patterns
+
+ACS learns from phase closures.
+
+- `case-studies/` stores sanitized standard collaboration cases.
+- `anti-patterns/` stores sanitized examples of surface-level compliance.
+- `templates/case-study-summary.md` is the required summary template.
+
+These materials must be redacted before commit. They are for reusable learning,
+not for exposing private project details.
 
 ## Project Structure
 
@@ -148,6 +162,9 @@ agent-collaboration-sop/
     naming-rules.md
     reviewer-quality-bar.md
     reviewer-testing-playbook.md
+    reviewer-evidence-gates.md
+    reviewer-product-validation.md
+    case-study-redaction.md
     technical-design-rules.md
     engineering-governance.md
   templates/
@@ -156,6 +173,9 @@ agent-collaboration-sop/
     reviewer-report.md
     owner-consensus-report.md
     evidence-ledger.md
+    case-study-summary.md
+  case-studies/
+  anti-patterns/
   adapters/
     codex.md
     claude-code.md

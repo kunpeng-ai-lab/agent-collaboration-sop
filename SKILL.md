@@ -108,11 +108,15 @@ A screen-only confirmation or general note is not a closed loop.
 6. Executor implements only within approved scope and writes handoff using
    `templates/executor-handoff.md`.
 7. Reviewer reviews using `templates/reviewer-report.md`,
-   `docs/reviewer-quality-bar.md`, `docs/reviewer-testing-playbook.md`, and
+   `docs/reviewer-quality-bar.md`, `docs/reviewer-testing-playbook.md`,
+   `docs/reviewer-evidence-gates.md`,
+   `docs/reviewer-product-validation.md`, and
    `docs/technical-design-rules.md`.
 8. Reviewer sends Owner a consensus report using
    `templates/owner-consensus-report.md`.
-9. Executor starts the next phase only after Owner approval.
+9. At phase closure, add a sanitized case study or anti-pattern summary when the
+   phase produced a reusable collaboration lesson.
+10. Executor starts the next phase only after Owner approval.
 
 ## Reviewer Must Check
 
@@ -124,6 +128,8 @@ A screen-only confirmation or general note is not a closed loop.
 - decoupling and dependency direction
 - test coverage, including failure paths
 - evidence ledger and screenshots
+- four evidence gates: command, evidence, product, and architecture
+- page-level or workflow-level validation for product-facing work
 - security, redaction, credentials, local path leakage
 - operational, release, upstream, and customer-visible risk
 - whether important code and methods include useful human-debuggable comments
@@ -131,6 +137,16 @@ A screen-only confirmation or general note is not a closed loop.
 ## Redline
 
 Green tests are evidence, not approval.
+
+For UI, prototype, report, public content, customer-visible, or workflow tasks,
+page-level/product-level validation is mandatory. Tests alone are not enough.
+
+Reviewer chat messages should include the review summary and detailed report
+path. Detailed review, product validation, and evidence analysis belong in the
+target project files.
+
+ACS case studies and anti-patterns must be sanitized according to
+`docs/case-study-redaction.md` before they are committed.
 
 No ledger entry means the claim is not accepted as verified.
 
