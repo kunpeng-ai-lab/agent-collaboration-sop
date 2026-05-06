@@ -24,6 +24,29 @@ ACS current version:
 Executed `git pull origin main`: yes / no
 Sync failure reason, if any:
 
+## ACS Adoption Check
+
+Required when ACS was explicitly requested, version changed, this is the first
+task of the day, or new ACS rules may affect the task.
+
+Files read after sync:
+
+- 
+
+Delta summary:
+
+- 
+
+Behavior update:
+
+- 
+
+Memory/project rules updated: yes / no
+
+Limitations:
+
+- 
+
 ## Development Package
 
 Plan:

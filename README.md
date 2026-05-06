@@ -83,6 +83,12 @@ Replace `<ACS 本地路径>` with the real local ACS clone path. Replace
 If an agent has already stored an older ACS wording in memory or local rules, it
 must replace that wording with the templates above.
 
+When latest ACS is explicitly requested, the ACS version changed, or new ACS
+redlines may affect the task, complete
+[docs/acs-adoption-check.md](docs/acs-adoption-check.md). Syncing only proves
+files were updated; Adoption Check proves the agent read the relevant files,
+summarized the delta, and updated its behavior.
+
 ## Quick Start
 
 1. Clone ACS:
@@ -136,6 +142,7 @@ See:
 - [docs/engineering-governance.md](docs/engineering-governance.md)
 - [docs/bdd-principles.md](docs/bdd-principles.md)
 - [docs/case-study-redaction.md](docs/case-study-redaction.md)
+- [docs/acs-adoption-check.md](docs/acs-adoption-check.md)
 
 ## Case Studies And Anti-Patterns
 
@@ -161,6 +168,7 @@ agent-collaboration-sop/
   SKILL.md
   docs/
     communication-routing.md
+    acs-adoption-check.md
     initialization-questionnaire.md
     protocol.md
     naming-rules.md

@@ -38,6 +38,33 @@ See:
 - `docs/reviewer-evidence-gates.md`
 - `docs/reviewer-product-validation.md`
 
+## ACS Adoption Review
+
+ACS sync evidence checked: yes / no
+
+ACS Adoption Check required: yes / no
+
+Adoption result: pass / needs changes / not applicable
+
+Files read by Executor:
+
+- 
+
+Delta summary quality:
+
+- 
+
+Behavior update quality:
+
+- 
+
+Memory/project-rule update confirmation:
+
+- 
+
+If the Executor only reported a version number when Adoption Check was required,
+return `needs changes`.
+
 ## Test Strategy Review
 
 Executor test plan reviewed:

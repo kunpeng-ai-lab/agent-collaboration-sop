@@ -49,6 +49,10 @@ git rev-parse --short HEAD
 Report the ACS local path, current version, and whether `git pull origin main`
 was executed. Do not claim sync without a version.
 
+When latest ACS is explicitly requested, the ACS version changed, this is the
+first project task of the day, or new ACS redlines may affect the task, run
+`docs/acs-adoption-check.md`. ACS sync without adoption is incomplete.
+
 ## Mandatory ACS Invocation
 
 Reviewer -> Executor development/design task:
@@ -121,6 +125,8 @@ A screen-only confirmation or general note is not a closed loop.
 ## Reviewer Must Check
 
 - ACS sync evidence
+- ACS adoption evidence when required: files read, delta summary, behavior
+  update, and memory/project-rule update confirmation
 - Given / When / Then behavior scenarios for non-trivial work
 - project goal alignment
 - approved design and plan alignment
@@ -154,6 +160,10 @@ Unreviewed redaction blocks commit, publication, sharing, and reuse.
 No ledger entry means the claim is not accepted as verified.
 
 No ACS sync evidence means the handoff is incomplete.
+
+When ACS Adoption Check is required, a version number alone is not enough. The
+agent must report files read, delta summary, behavior update, and
+memory/project-rule update confirmation.
 
 No behavior scenarios for non-trivial work means the development package is
 incomplete.
