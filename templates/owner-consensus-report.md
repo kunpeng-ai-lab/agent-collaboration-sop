@@ -7,6 +7,8 @@ Reviewer Short Name:
 Executor Agent:
 Executor Short Name:
 Date:
+Message ID:
+Responds To Message ID:
 
 ## Consensus
 

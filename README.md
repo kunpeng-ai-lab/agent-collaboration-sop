@@ -53,6 +53,10 @@ Owner -> Reviewer -> Executor
 
 See [docs/communication-routing.md](docs/communication-routing.md).
 
+Every formal ACS message must include a Message ID such as
+`202605061145-E01`. See [docs/message-id-rules.md](docs/message-id-rules.md).
+Receivers should check for duplicate Message IDs before acting.
+
 ## Mandatory ACS Invocation
 
 Before project work, sync ACS according to
@@ -143,6 +147,7 @@ See:
 - [docs/bdd-principles.md](docs/bdd-principles.md)
 - [docs/case-study-redaction.md](docs/case-study-redaction.md)
 - [docs/acs-adoption-check.md](docs/acs-adoption-check.md)
+- [docs/message-id-rules.md](docs/message-id-rules.md)
 
 ## Case Studies And Anti-Patterns
 
@@ -169,6 +174,7 @@ agent-collaboration-sop/
   docs/
     communication-routing.md
     acs-adoption-check.md
+    message-id-rules.md
     initialization-questionnaire.md
     protocol.md
     naming-rules.md

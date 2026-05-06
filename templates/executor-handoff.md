@@ -6,6 +6,8 @@ Phase:
 Executor Agent:
 Executor Short Name:
 Date:
+Message ID:
+Responds To Message ID:
 
 ## Summary
 
@@ -220,6 +222,7 @@ and sender.
 ```text
 Message To Reviewer:
 你好 <Reviewer>，我是 <Executor>。
+Message ID: <YYYYMMDDHHmm-E01>
 
 <write the acknowledgement, completion note, blocked reason, or review request here>
 

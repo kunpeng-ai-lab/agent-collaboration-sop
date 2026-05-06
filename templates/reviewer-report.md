@@ -6,10 +6,18 @@ Phase:
 Reviewer Agent:
 Reviewer Short Name:
 Date:
+Message ID:
+Responds To Message ID:
 
 ## Result
 
 Review result: pass / needs changes
+
+Duplicate Message ID check:
+
+- current message ID:
+- responds to:
+- duplicate detected: yes / no
 
 ## Verification Run
 

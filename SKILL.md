@@ -75,6 +75,10 @@ Replace `<ACS 本地路径>` with the real local ACS clone path. Replace
 All Owner-forwarded messages that should be copied to another agent must be
 wrapped in a fenced code block.
 
+Every formal ACS message must include a Message ID according to
+`docs/message-id-rules.md`, for example `Message ID: 202605061145-E01`.
+Receivers must check whether the Message ID was already processed before acting.
+
 Every Executor acknowledgement, blocked note, handoff, or review request must be
 wrapped as one fenced code block. Inside that code block, include a clear
 `Message To Reviewer` section and start with:
@@ -160,6 +164,11 @@ Unreviewed redaction blocks commit, publication, sharing, and reuse.
 No ledger entry means the claim is not accepted as verified.
 
 No ACS sync evidence means the handoff is incomplete.
+
+No Message ID means the formal ACS message is incomplete.
+
+Duplicate Message IDs must be treated as possible duplicate forwarding. Do not
+repeat side-effectful work until clarified.
 
 When ACS Adoption Check is required, a version number alone is not enough. The
 agent must report files read, delta summary, behavior update, and

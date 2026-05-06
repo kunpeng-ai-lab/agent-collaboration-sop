@@ -13,6 +13,7 @@ Before any work:
 7. Write everything into `docs/PROJECT_SOP.md`.
 8. Confirm the local ACS path and write it into `docs/PROJECT_SOP.md`.
 9. Confirm the communication route in `docs/communication-routing.md`.
+10. Confirm Message ID usage according to `docs/message-id-rules.md`.
 
 Default communication route:
 
@@ -30,6 +31,14 @@ Mandatory invocation:
   "请遵循 ACS 项目（<ACS 本地路径>）规范进行（<设计/编码>）。"
 - Executor -> Reviewer review requests must include:
   "请按照 ACS 项目（<ACS 本地路径>）规范进行（<测试/审核>）。"
+
+Every formal message must include a Message ID:
+
+```text
+Message ID: YYYYMMDDHHmm
+```
+
+The receiver must check for duplicate Message IDs before acting.
 
 ## Phase 1: Execution
 
