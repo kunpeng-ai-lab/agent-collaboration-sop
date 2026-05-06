@@ -75,6 +75,25 @@ Replace `<ACS 本地路径>` with the real local ACS clone path. Replace
 All Owner-forwarded messages that should be copied to another agent must be
 wrapped in a fenced code block.
 
+If the client cannot reliably preserve fenced code blocks, use the fallback ACS
+message envelope in `docs/message-envelope-rules.md`:
+
+```text
+<<<ACS_MESSAGE_BEGIN>>>
+Message To Reviewer:
+你好 <Reviewer>，我是 <Executor>。
+Message ID: <YYYYMMDDHHmm-E01>
+Responds To Message ID: <YYYYMMDDHHmm-R01>
+
+<message body>
+
+请按照 ACS 项目（<ACS 本地路径>）规范进行（测试/审核）。
+<<<ACS_MESSAGE_END>>>
+```
+
+The begin marker must be the first line and the end marker must be the last
+line. No text may appear outside the envelope.
+
 Every formal ACS message must include a Message ID according to
 `docs/message-id-rules.md`, for example `Message ID: 202605061145-E01`.
 Receivers must check whether the Message ID was already processed before acting.
@@ -185,3 +204,8 @@ starts with `你好 <Reviewer>，我是 <Executor>。`
 
 The whole `Message To Reviewer` must be inside a fenced code block. Screen-only
 confirmation or general note is not a closed loop.
+
+If a fenced code block is repeatedly stripped, truncated, or partially rendered
+by the chat client, the whole `Message To Reviewer` must use the ACS fallback
+envelope from `docs/message-envelope-rules.md`. Missing envelope boundaries or
+extra text outside the envelope is not a closed loop.

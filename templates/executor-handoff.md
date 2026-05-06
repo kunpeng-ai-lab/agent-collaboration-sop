@@ -231,6 +231,27 @@ ACS 当前版本：<git rev-parse --short HEAD>
 请按照 ACS 项目（<ACS 本地路径>）规范进行（<测试/审核>）。
 ```
 
+If the client repeatedly strips or truncates fenced code blocks, use the ACS
+fallback envelope instead:
+
+```text
+<<<ACS_MESSAGE_BEGIN>>>
+Message To Reviewer:
+你好 <Reviewer>，我是 <Executor>。
+Message ID: <YYYYMMDDHHmm-E01>
+Responds To Message ID: <YYYYMMDDHHmm-R01>
+ACS 当前版本: <git rev-parse --short HEAD>
+已执行 git pull origin main: yes / no
+
+<write the acknowledgement, completion note, blocked reason, or review request here>
+
+请按照 ACS 项目（<ACS 本地路径>）规范进行（测试/审核）。
+<<<ACS_MESSAGE_END>>>
+```
+
+No text may appear before `<<<ACS_MESSAGE_BEGIN>>>` or after
+`<<<ACS_MESSAGE_END>>>`.
+
 Reviewer should focus on:
 
 1. 

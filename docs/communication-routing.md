@@ -90,6 +90,25 @@ Replace `<ACS 本地路径>` with the actual local ACS clone path. Replace
 All Owner-forwarded messages that should be copied to another agent must be
 wrapped in a fenced code block.
 
+If the relay path cannot reliably preserve fenced code blocks, use the fallback
+envelope defined in `docs/message-envelope-rules.md`:
+
+```text
+<<<ACS_MESSAGE_BEGIN>>>
+Message To Reviewer:
+你好 <Reviewer>，我是 <Executor>。
+Message ID: <YYYYMMDDHHmm-E01>
+Responds To Message ID: <YYYYMMDDHHmm-R01>
+
+<message body>
+
+请按照 ACS 项目（<ACS 本地路径>）规范进行（测试/审核）。
+<<<ACS_MESSAGE_END>>>
+```
+
+The begin marker must be the first line, the end marker must be the last line,
+and no text may appear outside the envelope.
+
 The Executor must explicitly produce a `Message To Reviewer` section whenever a
 task is acknowledged, completed, blocked, or ready for review.
 
@@ -166,6 +185,11 @@ not closed and the Reviewer must ask for a corrected acknowledgement or handoff.
 
 If the Executor's acknowledgement is not wrapped as a fenced code block, the loop
 is not closed.
+
+If fenced code blocks are not preserved by the client, the Executor must use the
+ACS fallback envelope. Missing `<<<ACS_MESSAGE_BEGIN>>>`, missing
+`<<<ACS_MESSAGE_END>>>`, or extra text outside the envelope means the loop is not
+closed.
 
 If the Executor's `Message To Reviewer` does not start with
 `你好 <Reviewer>，我是 <Executor>。`, the loop is not closed.

@@ -57,6 +57,12 @@ Every formal ACS message must include a Message ID such as
 `202605061145-E01`. See [docs/message-id-rules.md](docs/message-id-rules.md).
 Receivers should check for duplicate Message IDs before acting.
 
+Formal messages should be copied as one complete fenced code block. If a client
+cannot preserve Markdown fences, use the fallback ACS message envelope:
+`<<<ACS_MESSAGE_BEGIN>>>` as the first line and `<<<ACS_MESSAGE_END>>>` as the
+last line. See
+[docs/message-envelope-rules.md](docs/message-envelope-rules.md).
+
 ## Mandatory ACS Invocation
 
 Before project work, sync ACS according to

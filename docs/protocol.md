@@ -40,6 +40,15 @@ Message ID: YYYYMMDDHHmm
 
 The receiver must check for duplicate Message IDs before acting.
 
+Formal ACS messages must use one of the valid message envelopes in
+`docs/message-envelope-rules.md`:
+
+- preferred: one complete fenced code block
+- fallback: `<<<ACS_MESSAGE_BEGIN>>>` ... `<<<ACS_MESSAGE_END>>>`
+
+If neither envelope is valid, the receiver must ask for a corrected resend
+before reviewing or executing substantive content.
+
 ## Phase 1: Execution
 
 Executor Agent:
