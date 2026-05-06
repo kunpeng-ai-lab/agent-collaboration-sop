@@ -1,5 +1,17 @@
 # ACS Anti-Patterns
 
+## Available Anti-Patterns
+
+- `green-tests-hidden-staged-diff/`: tests were green while staged diffs
+  contradicted the handoff.
+- `handoff-doc-drift/`: the handoff said a finding was fixed, but the formal
+  document still contained the stale instruction.
+
+## Redaction Requirement
+
+Every anti-pattern must pass Reviewer redaction approval before it is committed,
+shared, published, or reused by another team.
+
 This directory stores sanitized examples of surface-level compliance and review
 failures.
 
@@ -41,4 +53,3 @@ docs/case-study-redaction.md
 ```
 
 Use placeholders and summaries instead of private data.
-

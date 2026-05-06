@@ -1,5 +1,18 @@
 # ACS Case Studies
 
+## Available Cases
+
+- `phase0-baseline-stabilization/`: catching hidden staged diffs during a
+  baseline stabilization phase.
+- `phase1-implementation-package-review-loop/`: multi-round design-package
+  review that prevented test-gate drift, duplicate page work, product-language
+  drift, and fragile encoding checks before coding started.
+
+## Redaction Requirement
+
+Every case study must pass Reviewer redaction approval before it is committed,
+shared, published, or reused by another team.
+
 This directory stores sanitized standard collaboration cases.
 
 Case studies teach good Executor/Reviewer/Owner behavior through real or
@@ -49,4 +62,3 @@ Each case should answer:
 - What ACS rule changed or became clearer?
 - What should future teams copy?
 - What should future teams avoid?
-
