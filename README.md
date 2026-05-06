@@ -63,6 +63,10 @@ cannot preserve Markdown fences, use the fallback ACS message envelope:
 last line. See
 [docs/message-envelope-rules.md](docs/message-envelope-rules.md).
 
+Long handoffs should not be copied through chat. Write the full handoff to a
+project file and send only a short path-based notification. See
+[docs/file-first-handoff-rules.md](docs/file-first-handoff-rules.md).
+
 ## Mandatory ACS Invocation
 
 Before project work, sync ACS according to

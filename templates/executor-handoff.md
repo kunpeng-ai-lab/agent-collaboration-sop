@@ -252,6 +252,30 @@ ACS 当前版本: <git rev-parse --short HEAD>
 No text may appear before `<<<ACS_MESSAGE_BEGIN>>>` or after
 `<<<ACS_MESSAGE_END>>>`.
 
+For long handoffs, do not paste the full content into chat. Save this handoff as
+a project file and send only a short path-based notification:
+
+```text
+<<<ACS_MESSAGE_BEGIN>>>
+Message To Reviewer:
+你好 <Reviewer>，我是 <Executor>。
+Message ID: <YYYYMMDDHHmm-E01>
+Responds To Message ID: <YYYYMMDDHHmm-R01>
+ACS 当前版本: <git rev-parse --short HEAD>
+已执行 git pull origin main: yes / no
+
+完整 handoff 已写入:
+<handoff file path>
+
+摘要:
+- <one to five concise bullets>
+
+请审核该文件，不以聊天正文作为正式交付物。
+
+请按照 ACS 项目（<ACS 本地路径>）规范进行（测试/审核）。
+<<<ACS_MESSAGE_END>>>
+```
+
 Reviewer should focus on:
 
 1. 

@@ -94,6 +94,11 @@ Responds To Message ID: <YYYYMMDDHHmm-R01>
 The begin marker must be the first line and the end marker must be the last
 line. No text may appear outside the envelope.
 
+For long handoffs, design packages, closure notes, or evidence summaries, do not
+put the full content in chat. Use `docs/file-first-handoff-rules.md`: write the
+full handoff to a project file, then send only the Message ID, file path, short
+summary, and review request.
+
 Every formal ACS message must include a Message ID according to
 `docs/message-id-rules.md`, for example `Message ID: 202605061145-E01`.
 Receivers must check whether the Message ID was already processed before acting.
@@ -209,3 +214,7 @@ If a fenced code block is repeatedly stripped, truncated, or partially rendered
 by the chat client, the whole `Message To Reviewer` must use the ACS fallback
 envelope from `docs/message-envelope-rules.md`. Missing envelope boundaries or
 extra text outside the envelope is not a closed loop.
+
+If the message is too long for reliable chat copying, the Executor must switch
+to file-first handoff. The Reviewer reviews the file, not the shortened chat
+body.

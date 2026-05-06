@@ -49,6 +49,10 @@ Formal ACS messages must use one of the valid message envelopes in
 If neither envelope is valid, the receiver must ask for a corrected resend
 before reviewing or executing substantive content.
 
+For long or formal handoffs, use `docs/file-first-handoff-rules.md`. The full
+handoff belongs in a project file; chat should only contain Message ID, path,
+short summary, and review request.
+
 ## Phase 1: Execution
 
 Executor Agent:
