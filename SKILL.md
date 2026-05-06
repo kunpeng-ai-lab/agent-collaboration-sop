@@ -148,6 +148,9 @@ target project files.
 ACS case studies and anti-patterns must be sanitized according to
 `docs/case-study-redaction.md` before they are committed.
 
+Reviewer redaction approval is mandatory for every case study or anti-pattern.
+Unreviewed redaction blocks commit, publication, sharing, and reuse.
+
 No ledger entry means the claim is not accepted as verified.
 
 No ACS sync evidence means the handoff is incomplete.

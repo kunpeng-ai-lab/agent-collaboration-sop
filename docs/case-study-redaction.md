@@ -66,6 +66,45 @@ Before a case is committed:
 - [ ] Reviewer has recorded the redaction check in the target project's evidence
       ledger or review report.
 
+## Mandatory Reviewer Redaction Approval
+
+No case study or anti-pattern may be committed, published, shared with another
+team, or used as a training/reference artifact until the Reviewer explicitly
+approves redaction.
+
+Reviewer approval must be recorded in the case file and in the source project's
+review or evidence ledger.
+
+Required approval fields:
+
+```text
+Redaction reviewed by:
+Redaction review date:
+Redaction result: approved / needs changes
+Redaction evidence path:
+Remaining disclosure risk:
+```
+
+If the Reviewer cannot inspect the source material, the case must remain
+`Redaction Status: pending` and must not leave the source project.
+
+## Reviewer Redaction Checks
+
+Reviewer must check:
+
+- all conversation excerpts
+- all evidence excerpts
+- all screenshots and image references
+- all repository links and issue/PR links
+- all local paths and machine/user identifiers
+- all customer, product, commercial, and roadmap details
+- all secrets, credentials, tokens, cookies, webhook URLs, auth headers, and
+  session identifiers
+- all public URLs that could reveal private work
+
+Reviewer must reject the case when any sensitive material remains or when the
+redaction cannot be verified from the submitted evidence.
+
 ## Conversation Excerpts
 
 When exporting conversations:
@@ -93,3 +132,4 @@ When exporting evidence:
 The Reviewer must reject a case-study or anti-pattern submission when redaction
 is incomplete, even if the technical lesson is valuable.
 
+Redaction approval is a blocking ACS gate, not a suggestion.

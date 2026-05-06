@@ -148,6 +148,10 @@ ACS learns from phase closures.
 These materials must be redacted before commit. They are for reusable learning,
 not for exposing private project details.
 
+Reviewer redaction approval is mandatory. A case study or anti-pattern cannot be
+committed, published, shared, or reused until the Reviewer records redaction
+approval in the case file and source project evidence/review ledger.
+
 ## Project Structure
 
 ```text

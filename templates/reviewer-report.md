@@ -160,6 +160,14 @@ Failure behavior and stability:
 
 - 
 
+Case study / anti-pattern redaction review:
+
+- required: yes / no
+- result: approved / needs changes / not applicable
+- reviewed artifacts:
+- redaction evidence path:
+- remaining disclosure risk:
+
 ## Evidence Quality
 
 - 

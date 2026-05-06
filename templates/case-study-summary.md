@@ -7,7 +7,7 @@ Source Phase:
 Date:
 Prepared By:
 Reviewed By:
-Redaction Status: pending / checked
+Redaction Status: pending / reviewer-approved / needs changes
 
 ## Redaction Checklist
 
@@ -18,6 +18,31 @@ Redaction Status: pending / checked
 - [ ] Customer/commercial details generalized.
 - [ ] Screenshots omitted, blurred, cropped, or summarized.
 - [ ] The reusable lesson is still understandable.
+
+## Mandatory Reviewer Redaction Approval
+
+No case study or anti-pattern may be committed, published, shared, or used as a
+reference artifact before Reviewer redaction approval.
+
+Redaction reviewed by:
+
+- 
+
+Redaction review date:
+
+- 
+
+Redaction result: approved / needs changes
+
+- 
+
+Redaction evidence path:
+
+- 
+
+Remaining disclosure risk:
+
+- 
 
 ## Phase Goal
 
@@ -80,4 +105,3 @@ Did this case add or clarify an ACS rule?
 ## Future Team Checklist
 
 - [ ] 
-
