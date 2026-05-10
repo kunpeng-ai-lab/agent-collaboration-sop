@@ -1,9 +1,10 @@
 # Agent Collaboration SOP
 
-Maintained by **Kunpeng AI Exploration Bureau / kunpeng-ai-lab**.
+Created and maintained by **[kunpeng-ai-lab](https://github.com/kunpeng-ai-lab)**.
 
-Official site: [kunpeng-ai.com](https://kunpeng-ai.com)
-GitHub: [kunpeng-ai-lab](https://github.com/kunpeng-ai-lab)
+Official site: [kunpeng-ai.com](https://kunpeng-ai.com/?utm_source=github&utm_medium=github_referral&utm_campaign=acs-case-library-202605&utm_content=readme_site_link)
+
+English article: [Why Multi-Agent Engineering Needs ACS](https://kunpeng-ai.com/en/blog/agent-collaboration-sop-acs-case-library/?utm_source=github&utm_medium=github_referral&utm_campaign=acs-case-library-202605&utm_content=readme_article_link)
 
 Agent Collaboration SOP, abbreviated as **ACS**, is a vendor-neutral workflow for
 two-agent engineering collaboration. It works with Codex, Claude Code,
