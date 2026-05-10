@@ -166,6 +166,9 @@ ACS learns from phase closures.
 - `case-studies/` stores sanitized standard collaboration cases.
 - `anti-patterns/` stores sanitized examples of surface-level compliance.
 - `templates/case-study-summary.md` is the required summary template.
+- `docs/public-content/` stores sanitized public-source material for website
+  articles, community posts, screenshot briefs, and case-library contribution
+  calls.
 
 These materials must be redacted before commit. They are for reusable learning,
 not for exposing private project details.
