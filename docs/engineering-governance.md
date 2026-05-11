@@ -109,6 +109,35 @@ No behavior scenario for non-trivial work -> development package incomplete.
 Behavior scenario not covered by test/evidence -> review gap.
 ```
 
+## 3.2 Phase Continuity And Roadmap Stability
+
+Agents must preserve the approved phase plan unless the Owner explicitly approves
+a change.
+
+Before proposing a next phase, new milestone, or roadmap change, Reviewer and
+Executor must first check:
+
+- the previously approved plan and phase sequence
+- incomplete work in the current phase
+- open findings, closeout gaps, and Owner decision items
+- whether the proposed next task is a continuation, a correction, or a scope
+  change
+- whether Owner approval is required before changing direction
+
+Agents must not discard, skip, rename, or reframe an approved plan just because
+the latest chat message suggests a nearby idea. If the latest instruction appears
+to conflict with the established plan, the Reviewer must call out the conflict,
+state the current approved phase, and ask for Owner approval before changing the
+roadmap.
+
+Rule:
+
+```text
+No phase-continuity check -> next-phase recommendation incomplete.
+Plan change without Owner approval -> scope drift.
+Latest chat message does not automatically override the approved roadmap.
+```
+
 ## 4. Minimal Change Rule
 
 Changes must be scoped to the approved unit of work.

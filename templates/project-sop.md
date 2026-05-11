@@ -84,6 +84,9 @@ Required Verification:
 27. Handoffs and review requests must report ACS local path, ACS current version, and whether `git pull origin main` was executed.
 28. Non-trivial work must include Given / When / Then behavior scenarios before implementation.
 29. Reviewer must verify tests/evidence against the behavior scenarios.
+30. Before proposing or starting a next phase, Reviewer and Executor must check the approved phase sequence, unfinished current-phase work, open findings, closeout gaps, and Owner decision items.
+31. Agents must not discard, skip, rename, or reframe an approved plan because of a later chat message unless Owner explicitly approves the roadmap change.
+32. If the latest instruction conflicts with the established plan, Reviewer must state the conflict and ask Owner for an explicit decision before instructing Executor.
 
 ## Development Package Requirements
 

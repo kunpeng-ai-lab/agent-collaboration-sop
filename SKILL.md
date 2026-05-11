@@ -146,9 +146,13 @@ A screen-only confirmation or general note is not a closed loop.
    `docs/technical-design-rules.md`.
 8. Reviewer sends Owner a consensus report using
    `templates/owner-consensus-report.md`.
-9. At phase closure, add a sanitized case study or anti-pattern summary when the
+9. Before proposing or starting the next phase, Reviewer must check the approved
+   phase sequence, unfinished current-phase work, open findings, closeout gaps,
+   and Owner decision items. Do not skip, rename, or reframe the approved plan
+   unless Owner explicitly approves the roadmap change.
+10. At phase closure, add a sanitized case study or anti-pattern summary when the
    phase produced a reusable collaboration lesson.
-10. Executor starts the next phase only after Owner approval.
+11. Executor starts the next phase only after Owner approval.
 
 ## Reviewer Must Check
 
@@ -200,6 +204,10 @@ memory/project-rule update confirmation.
 
 No behavior scenarios for non-trivial work means the development package is
 incomplete.
+
+No phase-continuity check means the next-phase recommendation is incomplete.
+
+Plan change without Owner approval means scope drift.
 
 No ACS invocation means the receiver must ask for correction before substantive
 work starts.

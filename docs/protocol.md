@@ -115,9 +115,24 @@ Reviewer Agent must not:
 
 If review passes and next phase is proposed:
 
-1. Reviewer writes a consensus report.
-2. Owner reads and confirms.
-3. Only after approval may Executor begin next phase.
+1. Reviewer checks the approved phase sequence, unfinished current-phase work,
+   open findings, closeout gaps, and Owner decision items.
+2. Reviewer states whether the proposed next step continues the existing plan or
+   changes the roadmap.
+3. If the proposed next step changes, skips, renames, or reframes the approved
+   plan, Reviewer must ask Owner for explicit approval before instructing the
+   Executor.
+4. Reviewer writes a consensus report.
+5. Owner reads and confirms.
+6. Only after approval may Executor begin next phase.
+
+Rule:
+
+```text
+Do not abandon the previous plan silently.
+Do not skip a phase because the latest chat message mentions a later goal.
+Changing the plan is an Owner decision.
+```
 
 ## Phase 4: Evidence Ledger
 
